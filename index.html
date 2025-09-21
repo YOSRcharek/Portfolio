@@ -11,7 +11,7 @@
     - favicon
   -->
   <link rel="shortcut icon" href="./assets/images/profile.jpg" type="image/x-icon">
-
+ <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
   <!--
     - custom css link
   -->
@@ -27,9 +27,6 @@
 
 <body>
 
-  <!--
-    - #MAIN
-  -->
 
   <main>
 
@@ -203,6 +200,7 @@
 
       <article class="about  active" data-page="about">
 
+
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
@@ -296,6 +294,7 @@
     </li>
 
   </ul>
+
 
 </section>
 
@@ -941,6 +940,10 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 </style>
 
+
+
+
+
       </article>
 
 
@@ -963,14 +966,22 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
-            </li>
-
-          
+            </li>  
 
             <li class="filter-item">
               <button data-filter-btn>Web development</button>
             </li>
 
+           <li class="filter-item">
+              <button data-filter-btn>Mobile development</button>
+            </li>
+
+           <li class="filter-item">
+              <button data-filter-btn>QA Test</button>
+            </li>
+          <li class="filter-item">
+              <button data-filter-btn>Desktop development</button>
+          </li>
           </ul>
 
           <div class="filter-select-box">
@@ -991,8 +1002,6 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
                 <button data-select-item>All</button>
               </li>
 
-          
-
               <li class="select-item">
                 <button data-select-item>Web development</button>
               </li>
@@ -1002,85 +1011,133 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
           </div>
 
           <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://eddar-darkom.netlify.app/">
-
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
+                  <div class="project-item-icon-box" data-modal="carouselModal">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/EDDARR.png" alt="finance" loading="lazy">
+                  <img src="./assets/images/projet1.png" alt="finance" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Eddar Darkom</h3>
-
+                <h3 class="project-title">HomeLengo</h3>
                 <p class="project-category">Web development</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://recruitpro-frontend.onrender.com/">
+         <li class="project-item active" data-filter-item data-category="web development">
+          <a href="#">
+            <figure class="project-img">
+              <div class="project-item-icon-box" data-modal="videoModal" data-video="https://www.youtube.com/embed/fvlfpAvHp7k?autoplay=1">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="./assets/images/projet2.png" alt="orizon" loading="lazy">
+            </figure>
+            <h3 class="project-title">Smart190</h3>
+            <p class="project-category">Web development</p>
+          </a>
+        </li>
 
+          <li class="project-item active" data-filter-item data-category="QA Test">
+            <a href="#">
+              <figure class="project-img">
+                <div class="project-item-icon-box" data-modal="videoModal" data-video="https://www.youtube.com/embed/GBc0DRFTGsk?autoplay=1">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/projet4.png" alt="orizon" loading="lazy">
+              </figure>
+              <h3 class="project-title">Esprit Testing Website</h3>
+              <p class="project-category">QA Testing</p>
+            </a>
+          </li>
+           <li class="project-item active" data-filter-item data-category="Mobile development">
+              <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
+                  <div class="project-item-icon-box" data-modal="carouselModalTn">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/RECRUITPRO.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/projet3.png" alt="orizon" loading="lazy">
                 </figure>
+                <h3 class="project-title">TunisiaTouristic</h3>
+                <p class="project-category">Mobile Development</p>
+              </a>
+            </li>
 
-                <h3 class="project-title">RecruitPro</h3>
-
+             <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box" data-modal="carouselModalResa">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projet7.png" alt="resa" loading="lazy">
+                </figure>
+                <h3 class="project-title">Resa</h3>
                 <p class="project-category">Web development</p>
-
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://civicimpact.netlify.app/">
-
+           <li class="project-item active" data-filter-item data-category="web development">
+            <a href="#">
+              <figure class="project-img">
+                <div class="project-item-icon-box" data-modal="carouselModalTuniCollab">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/projet8.png" alt="finance" loading="lazy">
+              </figure>
+              <h3 class="project-title">TuniCollab</h3>
+              <p class="project-category">Web development</p>
+            </a>
+          </li>
+             <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
+                  <div class="project-item-icon-box" data-modal="carouselModal">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/CIVICC.png" alt="fundo" loading="lazy">
+                  <img src="./assets/images/projet9.png" alt="finance" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">CIVICIMPACT</h3>
-
-                <p class="project-category">Web design</p>
-
+                <h3 class="project-title">TuniCollab</h3>
+                <p class="project-category">Desktop development</p>
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://diame.tn/">
-
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
+                  <div class="project-item-icon-box" data-modal="carouselModal">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/DIAME.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/projet5.png" alt="finance" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">DIAME</h3>
-
-                <p class="project-category">Applications</p>
-
+                <h3 class="project-title">Classy</h3>
+                <p class="project-category">Web development</p>
               </a>
             </li>
 
-         
+           <li class="project-item active" data-filter-item data-category="mobile development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box" data-modal="carouselModalClassyPhone">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projet6.png" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">Classy</h3>
+                <p class="project-category">Mobile development</p>
+              </a>
+            </li>
 
-       
-
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box" data-modal="carouselModal">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projet10.png" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">ModemRetourne</h3>
+                <p class="project-category">Desktop development</p>
+              </a>
+            </li>
           </ul>
-
+           
         </section>
 
       </article>
@@ -1270,155 +1327,7 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
       </article>
 
-
-<!--
-
-            
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/apolo.png" alt="Graph Developer - Associate" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">APOLLO</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Apr 23, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Graph Developer - Associate</h3>
-
-                  <p class="blog-text">
-                    Demonstrates proficiency in building and managing graph-based applications using Apollo, focusing on efficient data querying and schema design.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/marke.png" alt="Online Marketing Foundations" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">MARKETING</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">DEC 28, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Online Marketing Foundations</h3>
-
-                  <p class="blog-text">
-                    Covers essential strategies and tools for effective online marketing, including SEO, content creation, and social media engagement.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/python.png" alt="Python for beginners - Learn all the basics of python" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">PYTHON</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">AUG 9, 2021</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Python for beginners - Learn all the basics of python</h3>
-
-                  <p class="blog-text">
-                    Provides foundational knowledge in Python programming, covering syntax, data structures, and basic scripting for beginners.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/certiff.png" alt="CERTIFICATE OF COMPLETION" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">INTERNSHIP</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">APR 1, 2024</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">CERTIFICATE OF COMPLETION</h3>
-
-                  <p class="blog-text">
-                    Recognizes successful completion of an internship program, showcasing practical experience and project contributions in a professional setting.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/htmll.png" alt="HTML Course" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">FEB 20, 2021</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">HTML Course</h3>
-
-                  <p class="blog-text">
-                    Introduces core HTML concepts for web development, including structure, tags, and semantic markup for creating responsive web pages.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-
-
--->
-
-      <!--
+     <!--
         - #CONTACT
       -->
 
@@ -1460,25 +1369,128 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       </article>
 
     </div>
+<!-- Modal Carousel -->
+<div id="carouselModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="my-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring">
+            <!-- 15 images -->
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="carouselModalResa" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="my-carousel resa-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring">
+            <!-- IMPORTANT ⚡⚡ 12 divs img vides pour que GSAP applique les backgroundImage -->
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="carouselModalTuniCollab" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="my-carousel tuniCollab-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring">
+            <!-- VIDE : les <div class="img"> seront générés en JS -->
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="carouselModalTn" class="modalTn">
+  <div class="modal-contentTn">
+    <span class="close-btnTn">&times;</span>
+    <div class="my-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring-tn">
+            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="carouselModalClassyPhone" class="modalClassyPhone">
+  <div class="modal-contentClassyPhone">
+    <span class="close-btnClassyPhone">&times;</span>
+    <div class="my-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring-ClassyPhone">
+            <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
+            <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
+             </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal YouTube -->
+<div id="videoModal" class="modal2">
+  <div class="modal-content2">
+    <span class="close-btn2">&times;</span>
+    <div class="video-container">
+      <iframe id="youtubeVideo" width="100%" height="100%" 
+        src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
 
   </main>
 
 
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js'></script>
+<script src="./assets/js/script.js"></script>
+<script src="./assets/js/image.js"></script>
+<script src="./assets/js/imageClassyPhone.js"></script>
+<script src="./assets/js/imagesTunisiaTouristic.js"></script>
+<script src="./assets/js/imageResa.js"></script>
+<script src="./assets/js/video.js"></script>
 
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
 </html>
+
