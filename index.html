@@ -1074,22 +1074,22 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
                 <p class="project-category">Web development</p>
               </a>
             </li>
-           <li class="project-item active" data-filter-item data-category="web development">
-            <a href="#">
-              <figure class="project-img">
-                <div class="project-item-icon-box" data-modal="carouselModalTuniCollab">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/projet8.png" alt="finance" loading="lazy">
-              </figure>
-              <h3 class="project-title">TuniCollab</h3>
-              <p class="project-category">Web development</p>
-            </a>
-          </li>
-             <li class="project-item active" data-filter-item data-category="web development">
+          <li class="project-item active" data-filter-item data-category="web development">
               <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModal">
+                  <div class="project-item-icon-box" data-modal="carouselModalTuniCollab">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projet8.png" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">TuniCollab</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+             <li class="project-item active" data-filter-item data-category="Desktop development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box" data-modal="carouselModalTuniCollabJava">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
                   <img src="./assets/images/projet9.png" alt="finance" loading="lazy">
@@ -1101,7 +1101,7 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             <li class="project-item active" data-filter-item data-category="web development">
               <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModal">
+                  <div class="project-item-icon-box" data-modal="carouselModalClassy">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
                   <img src="./assets/images/projet5.png" alt="finance" loading="lazy">
@@ -1127,7 +1127,7 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             <li class="project-item active" data-filter-item data-category="Desktop development">
               <a href="#">
                 <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModal">
+                  <div class="project-item-icon-box" data-modal="carouselModalModem">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
                   <img src="./assets/images/projet10.png" alt="finance" loading="lazy">
@@ -1410,25 +1410,60 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 <div id="carouselModalTuniCollab" class="modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
-    <div class="my-carousel tuniCollab-carousel">
+    <div class="my-carousel TuniCollab-carousel">
       <div class="stage">
         <div class="container">
           <div class="ring">
-            <!-- VIDE : les <div class="img"> seront générés en JS -->
+            <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
             <div class="img"></div><div class="img"></div><div class="img"></div>
             <div class="img"></div><div class="img"></div><div class="img"></div>
             <div class="img"></div><div class="img"></div><div class="img"></div>
             <div class="img"></div><div class="img"></div><div class="img"></div>
             <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div>
-
+            <div class="img">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+<div id="carouselModalTuniCollabJava" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="my-carousel TuniCollabJava-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring">
+            <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+<div id="carouselModalClassy" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="my-carousel classy-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring">
+            <!-- IMPORTANT ⚡⚡ 8 divs img vides pour que GSAP applique les backgroundImage -->
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <div id="carouselModalTn" class="modalTn">
   <div class="modal-contentTn">
     <span class="close-btnTn">&times;</span>
@@ -1461,6 +1496,26 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     </div>
   </div>
 </div>
+<div id="carouselModalModem" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="my-carousel modem-carousel">
+      <div class="stage">
+        <div class="container">
+          <div class="ring">
+            <!-- IMPORTANT ⚡⚡ 15 divs img vides pour que GSAP applique les backgroundImage -->
+            <!-- 15 images -->
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+            <div class="img"></div><div class="img"></div><div class="img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal YouTube -->
 <div id="videoModal" class="modal2">
   <div class="modal-content2">
@@ -1472,6 +1527,10 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     </div>
   </div>
 </div>
+<div id="imageFullscreenModal" class="image-fullscreen-modal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="Image en plein écran">
+</div>
 
   </main>
 
@@ -1482,8 +1541,12 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 <script src="./assets/js/script.js"></script>
 <script src="./assets/js/image.js"></script>
 <script src="./assets/js/imageClassyPhone.js"></script>
+<script src="./assets/js/imageTuniCollab.js"></script>
+<script src="./assets/js/imageTuniCollabJava.js"></script>
 <script src="./assets/js/imagesTunisiaTouristic.js"></script>
 <script src="./assets/js/imageResa.js"></script>
+<script src="./assets/js/imageClassy.js"></script>
+<script src="./assets/js/imageModem.js"></script>
 <script src="./assets/js/video.js"></script>
 
 <!-- Ionicons -->

@@ -94,8 +94,32 @@ function initCarousel(modalId, carouselClass, imagesArray) {
       modal.style.display = "none";
     }
   });
-}
 
+  // ---- Plein écran au clic ----
+$(`#${modalId} .img`).on("click", function () {
+  const bg = $(this).css("background-image");
+  if (!bg || bg === "none") return; // sécurité
+
+  const url = bg.slice(5, -2); // extrait l’URL de background-image
+
+  const fullscreenModal = document.getElementById("imageFullscreenModal");
+  const fullscreenImg = document.getElementById("fullscreenImage");
+
+  fullscreenImg.src = url; // injecte l’image cliquée
+  fullscreenModal.style.display = "flex";
+});
+
+// ---- Fermer le fullscreen ----
+const closeFull = document.querySelector(".close-fullscreen");
+closeFull.addEventListener("click", () => {
+  const fullscreenModal = document.getElementById("imageFullscreenModal");
+  const fullscreenImg = document.getElementById("fullscreenImage");
+
+  fullscreenImg.src = ""; // 🔑 reset pour que ce soit null après fermeture
+  fullscreenModal.style.display = "none";
+});
+
+}
 
 // Images Resa
 const myImagesResa = [];
