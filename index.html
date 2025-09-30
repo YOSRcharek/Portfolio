@@ -1380,6 +1380,56 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const pages = document.querySelectorAll('article[data-page]');
+
+  if (!navLinks.length || !pages.length) {
+    console.error('Nav links ou pages introuvables : vérifie les attributs data-nav-link / data-page');
+    return;
+  }
+
+  // fonction pour afficher la page target (ex: 'about', 'resume', ...)
+  const showPage = (target) => {
+    const t = (target || '').trim().toLowerCase();
+    let matched = false;
+
+    pages.forEach(page => {
+      const pageName = (page.dataset.page || '').trim().toLowerCase();
+      const isActive = pageName === t;
+      page.classList.toggle('active', isActive);
+      if (isActive) matched = true;
+    });
+
+    navLinks.forEach(link => {
+      const linkTarget = (link.dataset.navTarget || link.textContent).trim().toLowerCase();
+      link.classList.toggle('active', linkTarget === t);
+    });
+
+    if (!matched) {
+      console.warn('Aucune page correspondante pour :', t);
+    }
+    window.scrollTo(0, 0);
+  };
+
+  // attacher les handlers
+  navLinks.forEach(link => {
+    link.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      // dataset.navTarget permet d'être explicite (utile si bouton contient <i> ou autres)
+      const target = link.dataset.navTarget || link.textContent;
+      showPage(target);
+    });
+  });
+
+  // optionnel : afficher la page correspondant au bouton actif au chargement
+  const initial = Array.from(navLinks).find(l => l.classList.contains('active'));
+  if (initial) {
+    showPage(initial.dataset.navTarget || initial.textContent);
+  }
+});
+</script>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
