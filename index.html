@@ -1150,42 +1150,44 @@
         - #CONTACT
       -->
 
-      <article class="contact" data-page="contact">
+<article class="contact" data-page="contact">
 
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6381.123431116939!2d10.180694416743219!3d36.90083196802466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb763f2120bb%3A0xc3e79593db50c2e8!2sLa%20petite%20Ariana%2C%20Cebalat%20Ben%20Ammar!5e0!3m2!1sfr!2stn!4v1756923209493!5m2!1sfr!2stn" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </figure>
-        </section>
+  <!-- 🗺️ Google Map centrée sur Ariana Centre -->
+  <section class="mapbox" data-mapbox>
+    <figure>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6381.246321303722!2d10.186523!3d36.866507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3456b8aef79f%3A0xb7a04888e566622b!2sAriana%20Centre!5e0!3m2!1sfr!2stn!4v1756923209493!5m2!1sfr!2stn"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </figure>
+  </section>
 
-        <section class="contact-form">
+  <!-- 📧 Formulaire de contact -->
+  <section class="contact-form">
+    <h3 class="h3 form-title">Contact Form</h3>
 
-          <h3 class="h3 form-title">Contact Form</h3>
+    <form action="https://formspree.io/f/mldoodga" method="POST" class="form" data-form>
 
-          <form action="#" class="form" data-form>
+      <div class="input-wrapper">
+        <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+        <input type="email" name="email" class="form-input" placeholder="Email address" required>
+      </div>
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+      <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+      <button class="form-btn" type="submit">
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send Message</span>
+      </button>
+    </form>
+  </section>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
+</article>
 
     </div>
     <!-- Modal Carousel -->
