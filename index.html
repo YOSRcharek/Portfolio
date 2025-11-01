@@ -23,16 +23,85 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+<style>
+.skills {
+  padding: 2rem;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  margin: 2rem 0;
+  color: #e0e0e0;
+}
+
+.h3.skills-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.h4.category-title {
+  font-size: 1.5rem;
+  color: #74870b;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #6200ea;
+  padding-bottom: 0.5rem;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-item {
+  transition: transform 0.3s ease;
+}
+
+.skills-item:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  background-color: #2c2c3e;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  color: #e0e0e0;
+}
+
+.skill-card:hover {
+  box-shadow: 0 6px 20px rgba(255, 235, 59, 0.5);
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+</style>
+
 
 <body>
 
 
   <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
@@ -146,126 +215,69 @@
       </div>
 
     </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
     <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
       <nav class="navbar">
-
-        <ul class="navbar-list">
-
+         <ul class="navbar-list">
           <li class="navbar-item">
             <button class="navbar-link  active" data-nav-link>About</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Certifications</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
-
         </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-
-        <header>
+        </nav>
+    <article class="about  active" data-page="about">
+       <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
-
         <section class="about-text">
-<p>
-   As a final-year engineering student specializing in Web and Internet Technologies at ESPRIT, I see the web not just as a tool, but as a living ecosystem of innovation. My journey has allowed me to build strong expertise in web development, CI/CD pipelines, and modern software engineering practices, while also exploring the emerging field of Artificial Intelligence. What excites me most is bridging technology with creativity — designing solutions that are not only functional but also meaningful. With a strong drive for continuous learning and problem-solving, I aim to contribute to projects that push boundaries and shape the future of digital experiences.
-</p>
-
-
-  <a href="/assets/CV-CHAREK-YOSR-EN-2025.pdf" download>
-    <button style="margin-top: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Download CV
-    </button>
-  </a>
-</section>
-
-
-        <!--
-          - service
-        -->
-
-     <section class="service">
-
+          <p>
+            As a final-year engineering student specializing in Web and Internet Technologies at ESPRIT, I see the web not just as a tool, but as a living ecosystem of innovation. My journey has allowed me to build strong expertise in web development, CI/CD pipelines, and modern software engineering practices, while also exploring the emerging field of Artificial Intelligence. What excites me most is bridging technology with creativity — designing solutions that are not only functional but also meaningful. With a strong drive for continuous learning and problem-solving, I aim to contribute to projects that push boundaries and shape the future of digital experiences.
+          </p>
+          <a href="/assets/CV-CHAREK-YOSR-EN-2025.pdf" download>
+              <button style="margin-top: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Download CV
+              </button>
+            </a>
+          </section>
+      <section class="service">
   <h3 class="h3 service-title">What I'm Doing</h3>
-
   <ul class="service-list">
-
     <li class="service-item">
-
       <div class="service-icon-box">
         <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
       </div>
-
       <div class="service-content-box">
         <h4 class="h4 service-item-title">Web Development</h4>
-
         <p class="service-item-text">
           High-quality development of websites at a professional level, creating responsive and efficient solutions.
         </p>
       </div>
-
     </li>
-
     <li class="service-item">
-
       <div class="service-icon-box">
         <img src="./assets/images/devops.png" alt="DevOps icon" width="40">
       </div>
-
       <div class="service-content-box">
         <h4 class="h4 service-item-title">DevOps</h4>
-
         <p class="service-item-text">
           Streamlining development pipelines with CI/CD, cloud infrastructure, and automation for scalable systems.
         </p>
       </div>
-
     </li>
-
     <li class="service-item">
-
       <div class="service-icon-box">
         <img src="./assets/images/ai.png" alt="AI icon" width="40">
       </div>
-
       <div class="service-content-box">
         <h4 class="h4 service-item-title">AI Development</h4>
 
@@ -289,32 +301,15 @@
           Crafting modern, user-friendly, and visually appealing designs for websites at a professional level.
         </p>
       </div>
-
     </li>
-
   </ul>
-
-
 </section>
-
       </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
       <article class="resume" data-page="resume">
-
         <header>
           <h2 class="h2 article-title">Resume</h2>
         </header>
-
   <section class="timeline">
-
   <div class="title-wrapper">
     <div class="icon-box">
       <ion-icon name="book-outline"></ion-icon>
@@ -491,25 +486,6 @@
   <p class="timeline-text">
     Developed a collaborative platform for book sharing, connecting enthusiasts and managing personal libraries.<br>
     Technologies: Laravel, PHP, MySQL<br>
-    <a href="https://github.com/Slouumaa/Bookshare" 
-       target="_blank" 
-       style="color:#0023bd; font-weight:bold; text-decoration:none;">
-      GitHub: BookShare
-    </a><br>
-    - Implemented user roles, personal libraries, and wishlists<br>
-    - Integrated gamification, notifications, and activity tracking<br>
-    - Managed blogs, articles, comments, likes, and subscriptions<br>
-    - Enabled secure online payments for book loans and purchases
-  </p>
-</li>
-
- <!-- HubEducator -->
-<li class="timeline-item">
-  <h4 class="h4 timeline-item-title">LibroLink – BookShare Collaborative Platform</h4>
-  <span>Sep 2025 — Nov 2025</span>
-  <p class="timeline-text">
-    Developed a collaborative platform for book sharing, connecting enthusiasts and managing personal libraries.<br>
-    Technologies: Laravel, PHP, MySQL<br>
     <a href="https://github.com/YOSRcharek/LibroLink" 
        target="_blank" 
        style="color:#0023bd; font-weight:bold; text-decoration:none;">
@@ -518,7 +494,8 @@
     - Implemented user roles, personal libraries, and wishlists<br>
     - Integrated gamification, notifications, and activity tracking<br>
     - Managed blogs, articles, comments, likes, and subscriptions<br>
-    - Enabled secure online payments for book loans and purchases
+    - Enabled secure online payments for book loans and purchases<br>
+    - Built DevOps pipeline for continuous integration and automated deployment
   </p>
 </li>
 
@@ -542,6 +519,25 @@
   </p>
 </li>
 
+<!-- smart190 -->
+<li class="timeline-item">
+  <h4 class="h4 timeline-item-title">Smart190 – Hospital Management & Real-Time Emergency Platform</h4>
+  <span>Feb 2025 — May 2025</span>
+  <p class="timeline-text">
+    Developed a real-time healthcare platform with role-based dashboards, patient tracking, and ambulance routing.<br>
+    Technologies: React.js, Node.js, MongoDB, Docker, Python, Flask<br>
+    <a href="https://github.com/YOSRcharek/Twinners_PI" 
+       target="_blank" 
+       style="color:#0023bd; font-weight:bold; text-decoration:none;">
+      GitHub: Smart190
+    </a><br>
+    - Integrated AI for urgency prediction and automated triage<br>
+    - Implemented interactive maps for real-time ambulance tracking<br>
+    - Developed smart notifications and hospital coordination system<br>
+    - Built DevOps pipeline for continuous integration and automated deployment<br>
+    - Designed dashboards for doctors, emergency responders, and administrators
+  </p>
+</li>
 
   <!-- HomeLengo -->
   <li class="timeline-item">
@@ -754,84 +750,6 @@
 
 </section>
 
-<style>
-.skills {
-  padding: 2rem;
-  background-color: #1e1e2f;
-  border-radius: 12px;
-  margin: 2rem 0;
-  color: #e0e0e0;
-}
-
-.h3.skills-title {
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.skill-category {
-  margin-bottom: 2rem;
-}
-
-.h4.category-title {
-  font-size: 1.5rem;
-  color: #74870b;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #6200ea;
-  padding-bottom: 0.5rem;
-}
-
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
-
-.skills-item {
-  transition: transform 0.3s ease;
-}
-
-.skills-item:hover {
-  transform: translateY(-5px);
-}
-
-.skill-card {
-  display: flex;
-  align-items: center;
-  background-color: #2c2c3e;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  color: #e0e0e0;
-}
-
-.skill-card:hover {
-  box-shadow: 0 6px 20px rgba(255, 235, 59, 0.5);
-  transform: scale(1.05);
-}
-
-.skill-icon {
-  font-size: 1.5rem;
-  margin-right: 0.75rem;
-}
-
-.skill-name {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-}
-</style>
-
-
-
-
-
       </article>
 
 
@@ -899,6 +817,19 @@
           </div>
 
           <ul class="project-list">
+             <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"  data-modal="videoModal" data-video="https://www.youtube.com/embed/VlS76asl51Y">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projet11.png" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">HubEducator</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
             <li class="project-item active" data-filter-item data-category="web development">
               <a href="#">
                 <figure class="project-img">
@@ -1257,170 +1188,170 @@
       </article>
 
     </div>
-<!-- Modal Carousel -->
-<div id="carouselModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="my-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring">
-            <!-- 15 images -->
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
+    <!-- Modal Carousel -->
+    <div id="carouselModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="my-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring">
+                <!-- 15 images -->
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div id="carouselModalResa" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="my-carousel resa-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring">
-            <!-- IMPORTANT ⚡⚡ 12 divs img vides pour que GSAP applique les backgroundImage -->
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
+    <div id="carouselModalResa" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="my-carousel resa-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring">
+                <!-- IMPORTANT ⚡⚡ 12 divs img vides pour que GSAP applique les backgroundImage -->
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div id="carouselModalTuniCollab" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="my-carousel TuniCollab-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring">
-            <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img">
+    <div id="carouselModalTuniCollab" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="my-carousel TuniCollab-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring">
+                <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img">
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div id="carouselModalTuniCollabJava" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="my-carousel TuniCollabJava-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring">
+                <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img">
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div id="carouselModalClassy" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="my-carousel classy-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring">
+                <!-- IMPORTANT ⚡⚡ 8 divs img vides pour que GSAP applique les backgroundImage -->
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-</div>
-</div>
-<div id="carouselModalTuniCollabJava" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="my-carousel TuniCollabJava-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring">
-            <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img">
+    <div id="carouselModalTn" class="modalTn">
+      <div class="modal-contentTn">
+        <span class="close-btnTn">&times;</span>
+        <div class="my-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring-tn">
+                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-</div>
-</div>
-<div id="carouselModalClassy" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="my-carousel classy-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring">
-            <!-- IMPORTANT ⚡⚡ 8 divs img vides pour que GSAP applique les backgroundImage -->
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div>
+    <div id="carouselModalClassyPhone" class="modalClassyPhone">
+      <div class="modal-contentClassyPhone">
+        <span class="close-btnClassyPhone">&times;</span>
+        <div class="my-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring-ClassyPhone">
+                <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
+                <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div id="carouselModalTn" class="modalTn">
-  <div class="modal-contentTn">
-    <span class="close-btnTn">&times;</span>
-    <div class="my-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring-tn">
-            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-            <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
+    <div id="carouselModalModem" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="my-carousel modem-carousel">
+          <div class="stage">
+            <div class="container">
+              <div class="ring">
+                <!-- IMPORTANT ⚡⚡ 15 divs img vides pour que GSAP applique les backgroundImage -->
+                <!-- 15 images -->
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+                <div class="img"></div><div class="img"></div><div class="img"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div id="carouselModalClassyPhone" class="modalClassyPhone">
-  <div class="modal-contentClassyPhone">
-    <span class="close-btnClassyPhone">&times;</span>
-    <div class="my-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring-ClassyPhone">
-            <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
-            <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
-             </div>
+    <!-- Modal YouTube -->
+    <div id="videoModal" class="modal2">
+      <div class="modal-content2">
+        <span class="close-btn2">&times;</span>
+        <div class="video-container">
+          <iframe id="youtubeVideo" width="100%" height="100%" 
+            src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div id="carouselModalModem" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="my-carousel modem-carousel">
-      <div class="stage">
-        <div class="container">
-          <div class="ring">
-            <!-- IMPORTANT ⚡⚡ 15 divs img vides pour que GSAP applique les backgroundImage -->
-            <!-- 15 images -->
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-            <div class="img"></div><div class="img"></div><div class="img"></div>
-          </div>
-        </div>
-      </div>
+    <div id="imageFullscreenModal" class="image-fullscreen-modal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="Image en plein écran">
     </div>
-  </div>
-</div>
-<!-- Modal YouTube -->
-<div id="videoModal" class="modal2">
-  <div class="modal-content2">
-    <span class="close-btn2">&times;</span>
-    <div class="video-container">
-      <iframe id="youtubeVideo" width="100%" height="100%" 
-        src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-<div id="imageFullscreenModal" class="image-fullscreen-modal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="Image en plein écran">
-</div>
 
-  </main>
+</main>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
