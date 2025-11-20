@@ -1,4 +1,4 @@
-# <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/ba5260fe-4fba-4342-8b48-9c5b045c3faa" /> Yosr Charek – Personal Portfolio
+# <img width="50" height="50" alt="image" src="https://github.com/user-attachments/assets/ba5260fe-4fba-4342-8b48-9c5b045c3faa" /> Yosr Charek – Personal Portfolio
 
 A modern, responsive, and dark-themed personal portfolio website showcasing my skills, projects, and certifications as a **Web & Internet Technologies Engineer**.  
 This portfolio serves as a professional platform to highlight my experience in **Web Development**, **DevOps**, **AI Development**, and **Web Design**.
