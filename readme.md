@@ -49,6 +49,3 @@ Location: Tunis, Tunisia
 
 This portfolio is designed to reflect a professional, elegant, and futuristic aesthetic while remaining clean and easy to navigate.
 
-## ⭐️ Feel free to fork this repository and adapt it to create your own personal portfolio!
-
-Would you like me to also create the actual **README.md file** and provide it as a downloadable link?
