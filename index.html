@@ -1,1594 +1,1146 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charek Yosr</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/profilpic.png" type="image/x-icon">
- <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yosr Charek — IT Engineer & Full-Stack Developer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='40' font-family='JetBrains Mono, Consolas, monospace' font-weight='700' font-size='30' fill='%23f2f2f0' text-anchor='middle'%3EYC%3C/text%3E%3Crect x='42' y='44' width='14' height='5' fill='%23c6ff2f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-.skills {
-  padding: 2rem;
-  background-color: #1e1e2f;
-  border-radius: 12px;
-  margin: 2rem 0;
-  color: #e0e0e0;
-}
+  :root{
+    --bg:#0a0a0a;
+    --bg-soft:#0d0d0d;
+    --panel:#111212;
+    --panel-2:#141515;
+    --border:#232424;
+    --border-soft:#1c1d1d;
+    --text:#f2f2f0;
+    --muted:#8b8f8a;
+    --muted-2:#6b6f6a;
+    --lime:#c6ff2f;
+    --lime-dim:#9bd11f;
+    --lime-glow:rgba(198,255,47,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  ::selection{background:var(--lime);color:#0a0a0a;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--lime);
+    outline-offset:2px;
+  }
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+  section{position:relative;}
 
-.h3.skills-title {
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;letter-spacing:.14em;color:var(--lime);
+    text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:18px;
+  }
+  .eyebrow::before{content:'';width:16px;height:1px;background:var(--lime);display:inline-block;}
 
-.skill-category {
-  margin-bottom: 2rem;
-}
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(9,9,9,.72);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--border-soft);
+    transition:background .3s ease;
+  }
+  .nav{max-width:1240px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:20px;color:var(--text);}
+  .logo span{color:var(--lime);}
+  .nav-links{display:flex;gap:34px;list-style:none;}
+  .nav-links a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);position:relative;padding:6px 0;transition:color .25s ease;cursor:pointer;}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--lime);transition:width .3s ease;}
+  .nav-links a:hover, .nav-links a.active{color:var(--text);}
+  .nav-links a.active{color:var(--lime);}
+  .nav-links a:hover::after, .nav-links a.active::after{width:100%;}
+  .talk-btn{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    padding:11px 20px;border:1px solid var(--border);color:var(--text);
+    display:inline-flex;align-items:center;gap:8px;
+    transition:border-color .25s ease, color .25s ease, transform .2s ease;
+  }
+  .talk-btn:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-1px);}
+  .burger{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;}
 
-.h4.category-title {
-  font-size: 1.5rem;
-  color: #74870b;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #6200ea;
-  padding-bottom: 0.5rem;
-}
+  /* ---------- HERO ---------- */
+  .hero{padding:190px 0 120px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;}
+  .side-rail{position:fixed;left:40px;top:0;bottom:0;width:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:50;}
+  .side-rail .line{width:1px;height:80px;background:linear-gradient(var(--lime), transparent);}
+  .side-rail .icons{display:flex;flex-direction:column;gap:20px;}
+  .side-rail a{color:var(--muted);font-size:16px;transition:color .25s ease, transform .25s ease;}
+  .side-rail a:hover{color:var(--lime);transform:translateY(-2px);}
 
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
+  .hero-tag{font-family:'JetBrains Mono',monospace;color:var(--lime);font-size:14px;margin-bottom:20px;opacity:0;animation:fadeUp .7s ease forwards .1s;}
+  .hero h1{font-size:clamp(38px, 5.4vw, 64px);font-weight:700;letter-spacing:-.01em;line-height:1.04;color:var(--text);opacity:0;animation:fadeUp .7s ease forwards .22s;}
+  .hero h1 .accent{color:var(--lime);}
+  .hero h2{font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.5vw,16px);letter-spacing:.1em;color:var(--muted);font-weight:500;margin-top:16px;text-transform:uppercase;opacity:0;animation:fadeUp .7s ease forwards .32s;}
+  .hero p{margin-top:22px;max-width:480px;color:var(--muted);font-size:15px;line-height:1.75;opacity:0;animation:fadeUp .7s ease forwards .42s;}
+  .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s ease forwards .52s;}
+  .btn{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:15px 26px;display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:1px solid transparent;transition:transform .22s ease, box-shadow .22s ease, color .22s ease, border-color .22s ease;}
+  .btn-primary{background:var(--lime);color:#0a0a0a;font-weight:600;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px var(--lime-glow);}
+  .btn-ghost{border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px);}
+  .hero-note{margin-top:38px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted-2);display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .7s ease forwards .62s;}
+  .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(198,255,47,.5);}70%{box-shadow:0 0 0 8px rgba(198,255,47,0);}100%{box-shadow:0 0 0 0 rgba(198,255,47,0);}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
-.skills-item {
-  transition: transform 0.3s ease;
-}
+  .code-wrap{position:relative;opacity:0;animation:fadeUp .8s ease forwards .35s;}
+  .globe{position:absolute;right:-140px;top:-60px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, rgba(198,255,47,.18), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(198,255,47,.10) 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(90deg, rgba(198,255,47,.10) 0 1px, transparent 1px 22px);
+    -webkit-mask-image:radial-gradient(circle, black 60%, transparent 72%);
+    mask-image:radial-gradient(circle, black 60%, transparent 72%);
+    z-index:0;animation:spin 60s linear infinite;pointer-events:none;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .editor{position:relative;z-index:1;background:#0e0f0e;border:1px solid var(--border);box-shadow:0 40px 80px -30px rgba(0,0,0,.7), 0 0 60px -20px var(--lime-glow);}
+  .editor-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border-soft);}
+  .dots{display:flex;gap:7px;}
+  .dots span{width:10px;height:10px;border-radius:50%;background:#2a2b2a;}
+  .editor-bar .filename{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted-2);display:flex;align-items:center;gap:8px;}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);flex-shrink:0;}
+  .editor-body{padding:22px 22px 26px;font-family:'JetBrains Mono',monospace;font-size:12.6px;line-height:1.85;overflow-x:auto;}
+  .editor-body .ln{color:#3d3f3c;display:inline-block;width:22px;user-select:none;}
+  .tok-kw{color:#ff9d7a;} .tok-var{color:#c6ff2f;} .tok-str{color:#8fd0ff;} .tok-prop{color:#e7e7e2;} .tok-com{color:#54564f;font-style:italic;} .tok-punc{color:#6b6f6a;}
+  .type-cursor{display:inline-block;width:7px;height:14px;background:var(--lime);vertical-align:middle;animation:blink 1s steps(1) infinite;margin-left:2px;}
+  @keyframes blink{50%{opacity:0;}}
 
-.skills-item:hover {
-  transform: translateY(-5px);
-}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .stagger .reveal:nth-child(1){transition-delay:.02s;} .stagger .reveal:nth-child(2){transition-delay:.08s;}
+  .stagger .reveal:nth-child(3){transition-delay:.14s;} .stagger .reveal:nth-child(4){transition-delay:.20s;}
+  .stagger .reveal:nth-child(5){transition-delay:.26s;} .stagger .reveal:nth-child(6){transition-delay:.32s;}
+  .stagger .reveal:nth-child(7){transition-delay:.38s;} .stagger .reveal:nth-child(8){transition-delay:.44s;}
+  .stagger .reveal:nth-child(9){transition-delay:.50s;}
 
-.skill-card {
-  display: flex;
-  align-items: center;
-  background-color: #2c2c3e;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  color: #e0e0e0;
-}
+  /* ---------- ABOUT ---------- */
+  .about{padding:130px 0;}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start;}
+  .about-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.55) contrast(1.05);transition:filter .4s ease;}
+  .about-photo:hover img{filter:grayscale(0) contrast(1.05);}
+  .about-photo::before{content:'';position:absolute;inset:0;border:1px solid var(--lime);transform:translate(14px,14px);z-index:-1;}
+  .about-photo::after{content:'';position:absolute;left:0;top:0;width:22px;height:22px;border-left:2px solid var(--lime);border-top:2px solid var(--lime);}
+  .about-text h3{font-size:clamp(26px,3.2vw,36px);font-weight:600;line-height:1.28;max-width:560px;}
+  .about-text h3 .hl{color:var(--lime);font-style:italic;}
+  .about-text p{margin-top:20px;color:var(--muted);max-width:540px;font-size:14.5px;line-height:1.8;}
+  .stat-row{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap;}
+  .stat{display:flex;align-items:center;gap:12px;}
+  .stat .ic{color:var(--lime);font-family:'JetBrains Mono',monospace;font-size:14px;border:1px solid var(--border);width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .stat b{display:block;font-size:20px;font-weight:700;}
+  .stat span{display:block;font-size:10.5px;letter-spacing:.06em;color:var(--muted-2);text-transform:uppercase;}
 
-.skill-card:hover {
-  box-shadow: 0 6px 20px rgba(255, 235, 59, 0.5);
-  transform: scale(1.05);
-}
+  .edu-block{margin-top:48px;border-top:1px solid var(--border-soft);padding-top:34px;}
+  .edu-block h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:20px;}
+  .edu-item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--border-soft);}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-item .yr{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted-2);padding-top:2px;}
+  .edu-item .sc{font-size:14.5px;font-weight:600;}
+  .edu-item .deg{font-size:13px;color:var(--muted);margin-top:3px;}
 
-.skill-icon {
-  font-size: 1.5rem;
-  margin-right: 0.75rem;
-}
+  /* ---------- SKILLS / SERVICES ---------- */
+  .skills{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+  .skills h3{font-size:clamp(26px,2.8vw,32px);font-weight:600;max-width:560px;margin-bottom:50px;}
+  .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-soft);border:1px solid var(--border-soft);margin-bottom:70px;}
+  .skill-card{background:var(--panel);padding:32px 26px;transition:background .3s ease;}
+  .skill-card:hover{background:var(--panel-2);}
+  .skill-card .sic{color:var(--lime);font-size:22px;margin-bottom:22px;display:block;}
+  .skill-card h4{font-size:15px;font-weight:600;margin-bottom:10px;}
+  .skill-card p{font-size:13px;color:var(--muted);line-height:1.6;}
 
-.skill-name {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-}
+  .stack-title{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:44px;text-align:center;}
+  .stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 60px;}
+  .stack-cat h5{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-soft);}
+  .pill-row{display:flex;flex-wrap:wrap;gap:9px;}
+  .pill{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text);border:1px solid var(--border);padding:7px 13px;transition:border-color .25s ease, color .25s ease, transform .2s ease;}
+  .pill:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px);}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{padding:130px 0;}
+  .proj-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:50px;flex-wrap:wrap;gap:16px;}
+  .proj-head h3{font-size:clamp(26px,2.8vw,32px);font-weight:600;}
+  .view-all{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .proj-card{border:1px solid var(--border-soft);background:var(--panel);overflow:hidden;transition:border-color .3s ease, transform .35s ease;display:flex;flex-direction:column;}
+  .proj-card:hover{border-color:var(--lime);transform:translateY(-6px);}
+  .proj-thumb{position:relative;aspect-ratio:16/11;overflow:hidden;background:#0f0f0f;}
+  .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .proj-card:hover .proj-thumb img{transform:scale(1.06);}
+  .proj-badge{position:absolute;top:14px;left:14px;background:var(--lime);color:#0a0a0a;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;padding:5px 10px;text-transform:uppercase;font-weight:700;}
+  .proj-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column;}
+  .proj-body .top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .proj-body h4{font-size:17px;font-weight:600;}
+  .proj-body .arrow{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .25s ease, background .25s ease, transform .25s ease;}
+  .proj-card:hover .arrow{border-color:var(--lime);background:var(--lime);color:#0a0a0a;transform:rotate(45deg);}
+  .proj-body p{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.6;flex:1;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .tags span{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted-2);border:1px solid var(--border);padding:4px 9px;}
+  .proj-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border-soft);}
+  .proj-links a{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);transition:color .25s ease;}
+  .proj-links a:hover{color:var(--lime);}
+
+  .show-more-wrap{display:flex;justify-content:center;margin-top:44px;}
+  .show-more-btn{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+    background:none;border:1px solid var(--border);color:var(--text);padding:14px 30px;cursor:pointer;
+    transition:border-color .25s ease, color .25s ease, transform .2s ease;
+  }
+  .show-more-btn:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px);}
+  .more-hidden{display:none !important;}
+
+  /* ---------- EXPERIENCE ---------- */
+  .experience{padding:130px 0;background:var(--bg-soft);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+  .experience h3{font-size:clamp(26px,2.8vw,32px);font-weight:600;margin-bottom:56px;}
+  .timeline{position:relative;padding-left:64px;}
+  .timeline::before{content:'';position:absolute;left:19px;top:6px;bottom:6px;width:1px;background:var(--border);}
+  .tl-item{position:relative;padding-bottom:52px;display:grid;grid-template-columns:150px 1fr;gap:30px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{position:absolute;left:-64px;top:0;width:40px;height:40px;border:1px solid var(--lime);background:var(--bg-soft);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:14px;font-family:'JetBrains Mono',monospace;}
+  .tl-item.current .tl-dot{background:var(--lime);color:#0a0a0a;}
+  .tl-date{font-family:'JetBrains Mono',monospace;color:var(--lime);font-size:12px;padding-top:9px;}
+  .tl-role h4{font-size:17px;font-weight:600;}
+  .tl-role .co{color:var(--muted-2);font-size:12.5px;margin-top:4px;margin-bottom:10px;font-family:'JetBrains Mono',monospace;}
+  .tl-role p{color:var(--muted);font-size:13.5px;line-height:1.75;max-width:600px;}
+  .tl-role .stackline{color:var(--muted-2);font-size:12px;margin-top:8px;font-family:'JetBrains Mono',monospace;}
+  .tl-role a.gh{color:var(--lime);font-size:12px;font-family:'JetBrains Mono',monospace;display:inline-block;margin-top:8px;}
+  .tl-role a.gh:hover{text-decoration:underline;}
+
+  /* ---------- CERTIFICATIONS (ex-testimonials) ---------- */
+  .certifications{padding:130px 0;}
+  .certifications h3{font-size:clamp(26px,2.8vw,32px);font-weight:600;margin-bottom:50px;}
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .cert-card{border:1px solid var(--border-soft);background:var(--panel);overflow:hidden;transition:border-color .3s ease, transform .3s ease;display:flex;flex-direction:column;}
+  .cert-card:hover{border-color:var(--lime);transform:translateY(-4px);}
+  .cert-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0f0f0f;}
+  .cert-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3);transition:filter .4s ease, transform .5s ease;}
+  .cert-card:hover .cert-thumb img{filter:grayscale(0);transform:scale(1.05);}
+  .cert-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column;}
+  .cert-meta{display:flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--lime);text-transform:uppercase;letter-spacing:.04em;}
+  .cert-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--muted-2);}
+  .cert-meta .dt{color:var(--muted-2);}
+  .cert-card h4{font-size:15.5px;font-weight:600;margin-top:10px;}
+  .cert-card p{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.65;flex:1;}
+  .cert-link{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;transition:color .25s ease, gap .25s ease;background:none;border:none;cursor:pointer;padding:0;text-align:left;}
+  .cert-card:hover .cert-link{color:var(--lime);gap:9px;}
+  .cert-thumb{cursor:zoom-in;}
+  .cert-thumb .zoom-hint{
+    position:absolute;inset:0;background:rgba(10,10,10,.55);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    opacity:0;transition:opacity .25s ease;
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--lime);letter-spacing:.06em;text-transform:uppercase;
+  }
+  .cert-thumb .zoom-hint svg{flex-shrink:0;}
+  .cert-thumb:hover .zoom-hint{opacity:1;}
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed;inset:0;z-index:2000;
+    background:rgba(6,6,6,.92);
+    display:flex;align-items:center;justify-content:center;
+    padding:40px;
+    opacity:0;pointer-events:none;
+    transition:opacity .25s ease;
+  }
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{max-width:min(900px,92vw);max-height:86vh;object-fit:contain;border:1px solid var(--border-soft);box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
+    transform:scale(.96);transition:transform .25s ease;}
+  .lightbox.open img{transform:scale(1);}
+  .lightbox-close{
+    position:absolute;top:26px;right:34px;
+    width:42px;height:42px;border:1px solid var(--border);
+    background:rgba(10,10,10,.6);color:var(--text);
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;cursor:pointer;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .lightbox-close:hover{border-color:var(--lime);color:var(--lime);}
+  .lightbox-caption{position:absolute;bottom:30px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);}
+
+  /* ---------- CONTACT ---------- */
+  .contact{padding:130px 0 100px;background:var(--bg-soft);border-top:1px solid var(--border-soft);}
+  .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;}
+  .contact h3{font-size:clamp(28px,3.2vw,38px);font-weight:600;line-height:1.2;max-width:460px;}
+  .contact-lead p{color:var(--muted);margin-top:18px;max-width:420px;font-size:15px;line-height:1.7;}
+  .cinfo{margin-top:36px;display:flex;flex-direction:column;gap:18px;}
+  .cinfo div{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--text);}
+  .cinfo .ic{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--lime);flex-shrink:0;}
+  .map-frame{margin-top:34px;border:1px solid var(--border-soft);filter:grayscale(.4) invert(.92) contrast(.9);overflow:hidden;}
+  .map-frame iframe{display:block;width:100%;height:220px;border:0;}
+  .form-panel{background:var(--panel);border:1px solid var(--border-soft);padding:34px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--muted-2);text-transform:uppercase;margin-bottom:8px;}
+  .field input, .field select, .field textarea{width:100%;background:#0c0d0c;border:1px solid var(--border);color:var(--text);padding:13px 14px;font-family:'Space Grotesk',sans-serif;font-size:14px;transition:border-color .25s ease, background .25s ease;}
+  .field input::placeholder, .field textarea::placeholder{color:var(--muted-2);}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none;border-color:var(--lime);background:#0e100d;}
+  .field textarea{resize:vertical;min-height:100px;}
+  .submit-btn{width:100%;background:var(--lime);color:#0a0a0a;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;margin-top:6px;}
+  .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px var(--lime-glow);}
+  .submit-btn.sent{background:#88c928;}
+
+  footer{padding:34px 0;border-top:1px solid var(--border-soft);}
+  .foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+  .foot-left{display:flex;align-items:center;gap:22px;font-size:12.5px;color:var(--muted-2);}
+  .foot-links{display:flex;gap:26px;list-style:none;}
+  .foot-links a{font-size:12.5px;color:var(--muted);transition:color .25s ease;}
+  .foot-links a:hover{color:var(--lime);}
+  .foot-social{display:flex;gap:16px;}
+  .foot-social a{color:var(--muted);transition:color .25s ease;}
+  .foot-social a:hover{color:var(--lime);}
+
+  @media (max-width:1000px){
+    .side-rail{display:none;}
+    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .skill-grid{grid-template-columns:repeat(2,1fr);}
+    .stack-grid{grid-template-columns:1fr;}
+    .proj-grid, .cert-grid{grid-template-columns:repeat(2,1fr);}
+    .globe{display:none;}
+    .code-wrap{margin-top:20px;}
+    .edu-item{grid-template-columns:80px 1fr;}
+  }
+  @media (max-width:760px){
+    .wrap{padding:0 22px;}
+    .nav{padding:0 22px;}
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .talk-btn span{display:none;}
+    .hero{padding:140px 0 80px;}
+    .skill-grid, .proj-grid, .cert-grid{grid-template-columns:1fr;}
+    .about-grid{gap:40px;}
+    .stat-row{gap:24px;}
+    .tl-item{grid-template-columns:1fr;gap:8px;}
+    .foot-row{flex-direction:column;align-items:flex-start;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
 </style>
-
-
+</head>
 <body>
 
-
-  <main>
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img style="border-radius: 10%;" src="./assets/images/profilpic.png" alt="Guesmi Melek" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Charek Yosr">Charek Yosr</h1>
-
-          <p class="title">IT Engineer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:yosr.charek@esprit.tn" class="contact-link">yosr.charek@esprit.tn</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+21621870951" class="contact-link">+216 21 870 951 </a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="2001-12-06">December 6, 2001</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Tunis , Tunisie</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.facebook.com/yosr.bj.7" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/yosr-charek-919976242/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/yosr_charek/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-         
-          <li class="social-item">
-            <a href="https://github.com/YOSRcharek" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </aside>
-    <div class="main-content">
-      <nav class="navbar">
-         <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Certifications</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-        </ul>
-        </nav>
-    <article class="about  active" data-page="about">
-       <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-        <section class="about-text">
-          <p>
-            As a final-year engineering student specializing in Web and Internet Technologies at ESPRIT, I see the web not just as a tool, but as a living ecosystem of innovation. My journey has allowed me to build strong expertise in web development, CI/CD pipelines, and modern software engineering practices, while also exploring the emerging field of Artificial Intelligence. What excites me most is bridging technology with creativity — designing solutions that are not only functional but also meaningful. With a strong drive for continuous learning and problem-solving, I aim to contribute to projects that push boundaries and shape the future of digital experiences.
-          </p>
-          <a href="/assets/CV-CHAREK-YOSR-EN-2025.pdf" download>
-              <button style="margin-top: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                Download CV
-              </button>
-            </a>
-          </section>
-      <section class="service">
-  <h3 class="h3 service-title">What I'm Doing</h3>
-  <ul class="service-list">
-    <li class="service-item">
-      <div class="service-icon-box">
-        <img src="./assets/images/icondev.jpg" alt="Web development icon" width="40">
-      </div>
-      <div class="service-content-box">
-        <h4 class="h4 service-item-title">Web Development</h4>
-        <p class="service-item-text">
-          High-quality development of websites at a professional level, creating responsive and efficient solutions.
-        </p>
-      </div>
-    </li>
-    <li class="service-item">
-      <div class="service-icon-box">
-        <img src="./assets/images/devopsicon.png" alt="DevOps icon" width="40">
-      </div>
-      <div class="service-content-box">
-        <h4 class="h4 service-item-title">DevOps</h4>
-        <p class="service-item-text">
-          Streamlining development pipelines with CI/CD, cloud infrastructure, and automation for scalable systems.
-        </p>
-      </div>
-    </li>
-    <li class="service-item">
-      <div class="service-icon-box">
-        <img src="./assets/images/artificial.png" alt="AI icon" width="40">
-      </div>
-      <div class="service-content-box">
-        <h4 class="h4 service-item-title">AI Development</h4>
-
-        <p class="service-item-text">
-          Exploring and building beginner-level AI solutions, including machine learning models and integrations.
-        </p>
-      </div>
-
-    </li>
-
-    <li class="service-item">
-
-      <div class="service-icon-box">
-        <img src="./assets/images/designicon.png" alt="Web design icon" width="40">
-      </div>
-
-      <div class="service-content-box">
-        <h4 class="h4 service-item-title">Web Design</h4>
-
-        <p class="service-item-text">
-          Crafting modern, user-friendly, and visually appealing designs for websites at a professional level.
-        </p>
-      </div>
-    </li>
-  </ul>
-</section>
-      </article>
-      <article class="resume" data-page="resume">
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-  <section class="timeline">
-  <div class="title-wrapper">
-    <div class="icon-box">
-      <ion-icon name="book-outline"></ion-icon>
-    </div>
-
-    <h3 class="h3">Education</h3>
+<div class="side-rail">
+  <div class="line"></div>
+  <div class="icons">
+    <a href="https://github.com/YOSRcharek" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yosr-charek-919976242/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5V9h3ZM6.5 7.7A1.7 1.7 0 1 1 8.2 6a1.7 1.7 0 0 1-1.7 1.7ZM19 19h-3v-5c0-1.2 0-2.7-1.6-2.7S12.5 12.6 12.5 14v5h-3V9h2.9v1.3h.1a3.1 3.1 0 0 1 2.8-1.5c3 0 3.7 2 3.7 4.5Z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yosr_charek/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.facebook.com/yosr.bj.7" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.5H16l.4-3.1h-2.9V8.4c0-.9.3-1.5 1.6-1.5H16.5V4.2C16.2 4.1 15.2 4 14.1 4c-2.3 0-3.9 1.4-3.9 4v2.4H7.8v3.1h2.4V22Z"/></svg>
+    </a>
+    <a href="mailto:yosrcharek@gmail.com" aria-label="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+    </a>
   </div>
-
-  <ol class="timeline-list">
-
-    <li class="timeline-item">
-
-      <h4 class="h4 timeline-item-title">Private Higher School of Engineering and Technology</h4>
-
-      <span>2023 — 2026</span>
-
-      <p class="timeline-text">
-      Engineering in Computer Science
-    </p>
-
-    </li>
-
-    <li class="timeline-item">
-
-      <h4 class="h4 timeline-item-title">Higher Institute of Technological Studies of Charguia</h4>
-
-      <span>2020 — 2023</span>
-
-      <p class="timeline-text">
-       High School Diploma in Computer Science</p>
-
-    </li>
-     <li class="timeline-item">
-
-      <h4 class="h4 timeline-item-title">Street El Attarine High school</h4>
-
-      <span>2019- 2020</span>
-
-      <p class="timeline-text">
-       Bachelor’s degree in Information System Development
-</p>
-
-    </li>
-
-  </ol>
-
-</section>
-<section class="timeline">
-
-  <div class="title-wrapper">
-    <div class="icon-box">
-      <ion-icon name="book-outline"></ion-icon>
-    </div>
-<h3 class="h3">Experience</h3>
 </div>
 
-<ol class="timeline-list">
+<header id="siteHeader">
+  <nav class="nav">
+    <a href="#home" class="logo">YC<span>_</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="talk-btn"><span>Let's Talk</span> ↗</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </nav>
+</header>
 
-  <!-- Intern at ESPRIT -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Intern at ESPRIT</h4>
-    <span>01/06/2025 - 01/08/2025</span>
-    <p class="timeline-text">
-      Quality Assurance testing.<br>
-      Technologies: Katalon, JMeter, Puppeteer, and k6<br>
-      <a href="https://github.com/YOSRcharek/Katalon-test-" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: EspritTest Repository
-      </a><br>
-      - Conducted performance, usability, and compatibility tests<br>
-      - Across multiple browsers and devices<br>
-      - Designed and implemented comprehensive test scenarios<br>
-      - Covering all site non functionalities<br>
-      - Created test matrices to organize, track, and validate test cases<br>  
-      - Automated test execution using Katalon and others
-    </p>
-  </li>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag mono">&lt; Hello, I'm /&gt;</div>
+        <h1>YOSR <span class="accent">CHAREK</span></h1>
+        <h2>IT Engineer &amp; Full-Stack Developer</h2>
+        <p>Full-stack developer, graduate engineer in Computer Science, building responsive web apps, scalable backend services and REST APIs. Comfortable across the stack — Java, Spring Boot, Angular, React, Node.js — with a growing focus on AI, cloud and DevOps.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work ↗</a>
+          <a href="assets/cv/CV_Charek_Yosr_EN.pdf" download class="btn btn-ghost">Download Resume ⭳</a>
+        </div>
+        <div class="hero-note mono"><span class="pulse-dot"></span> Available for full-time opportunities</div>
+      </div>
 
-  <!-- Intern at ONRTECH -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Intern at ONRTECH</h4>
-    <span>01/06/2024 - 01/07/2024</span>
-    <p class="timeline-text">
-      Developed a property reservation platform in Tunisia with role-based access for visitors, clients, and owners.<br>
-      Technologies: React.js, Nest.js, MongoDB<br>
-      <a href="https://github.com/YOSRcharek/Resa-Booking" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: Resa
-      </a><br>
-      - Implemented back-office tools (property management, pricing, promotions, deposits, Stripe)<br>
-      - Developed front-office features (accounts, search, booking, profiles)<br>
-      - Deployed the application on Vercel for scalable and efficient hosting
-    </p>
-  </li>
-
-  <!-- Intern at Deveoo -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Intern at Deveoo (Final year project)</h4>
-    <span>27/01/2023 - 31/04/2023</span>
-    <p class="timeline-text">
-      Developed a web platform for managing beauty and wellness centers in Tunisia.<br>
-      Technologies: React.js, Node.js, MySQL, Flutter<br>
-      <a href="https://github.com/YOSRcharek/Classy" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: Classy
-      </a><br>
-      - Implemented management features for centers, categories, services, offers, owners, and staff<br>
-      - Enabled user registration and profile management for clients, owners, and staff<br>
-      - Implemented online booking system with creation, modification, and cancellation of appointments<br>
-      - Integrated approval workflow for center registration requests<br>
-      - Added statistical dashboards to track reservations, center popularity, and platform usage
-    </p>
-  </li>
-
-  <!-- Intern at Globalnet (2022) -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Intern at Globalnet</h4>
-    <span>07/01/2022 - 12/02/2022</span>
-    <p class="timeline-text">
-      Managed clients, modems, contracts, and subscriptions.<br>
-      Technologies: Java AWT, MySQL<br>
-      <a href="https://github.com/YOSRcharek/ModemRetourne" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: ModemRetourne
-      </a><br>
-      - Role-based authentication (client, customer service, technical support)<br>
-      - Technician interface to track and resolve modem issues<br>
-      - Client dashboards for monitoring modems and subscriptions<br>
-      - Error handling and notifications for all operations
-    </p>
-  </li>
-
-  <!-- Intern at Globalnet (2021) -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Intern at Globalnet</h4>
-    <span>01/07/2021 - 31/07/2021</span>
-    <p class="timeline-text">
-      Réservation en ligne de places de parking.<br>
-      Technologies: HTML, CSS, PHP<br>
-      <a href="https://github.com/YOSRcharek/SmartParking" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: SmartParking
-      </a><br>
-      - Gestion des utilisateurs et centralisation des données<br>
-      - Paiement en ligne possible par carte ou mobile<br>
-      - Réduction de l’usage du papier grâce à la digitalisation des informations
-    </p>
-  </li>
-
-</ol>
-
-
-</section>
-<section class="timeline">
-
-  <div class="title-wrapper">
-    <div class="icon-box">
-      <ion-icon name="code-outline"></ion-icon>
+      <div class="code-wrap">
+        <div class="globe"></div>
+        <div class="editor">
+          <div class="editor-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="filename"><span class="status-dot"></span>yosr.charek@dev</div>
+          </div>
+          <div class="editor-body mono" id="editorBody"></div>
+        </div>
+      </div>
     </div>
-<h3 class="h3">Academic Projects</h3>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About Me</div>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="assets/images/avatar.png" alt="Portrait de Yosr Charek">
+      </div>
+      <div class="about-text reveal">
+        <h3>I'm Yosr Charek, an engineer who values <span class="hl">clean code</span> and <span class="hl">scalable systems</span>.</h3>
+        <p>Full-Stack Developer with a Computer Engineering degree and hands-on experience in front-end and back-end development, REST API design, database management, and application integration. Proficient in Java, Spring Boot, Angular, React, Node.js, JavaScript, MySQL, MongoDB, and Docker. Experienced in developing responsive web applications, implementing scalable backend services, and working across the full software development lifecycle. Strong problem-solving, organizational, and analytical skills, with a continuous interest in AI, cloud technologies, and modern software engineering practices.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="ic mono">&gt;_</span><div><b>6+</b><span>Professional Internships</span></div></div>
+          <div class="stat"><span class="ic mono">&lt;/&gt;</span><div><b>14+</b><span>Projects Built</span></div></div>
+          <div class="stat"><span class="ic mono">✦</span><div><b>9+</b><span>Certifications</span></div></div>
+        </div>
+
+        <div class="edu-block">
+          <h4>Education</h4>
+          <div class="edu-item">
+            <div class="yr mono">2023 — 2026</div>
+            <div><div class="sc">Private Higher School of Engineering and Technology</div><div class="deg">Engineering in Computer Science — Graduated</div></div>
+          </div>
+          <div class="edu-item">
+            <div class="yr mono">2020 — 2023</div>
+            <div><div class="sc">Higher Institute of Technological Studies of Charguia</div><div class="deg">High School Diploma in Computer Science</div></div>
+          </div>
+          <div class="edu-item">
+            <div class="yr mono">2019 — 2020</div>
+            <div><div class="sc">Street El Attarine High School</div><div class="deg">Bachelor's degree in Information System Development</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills &amp; Services</div>
+    <h3 class="reveal">What I'm doing.</h3>
+    <div class="skill-grid stagger">
+      <div class="skill-card reveal"><span class="sic">&lt;/&gt;</span><h4>Web Development</h4><p>High-quality development of responsive, efficient websites and web applications.</p></div>
+      <div class="skill-card reveal"><span class="sic">⚙</span><h4>DevOps</h4><p>Streamlining pipelines with CI/CD, cloud infrastructure, and automation for scalable systems.</p></div>
+      <div class="skill-card reveal"><span class="sic">✦</span><h4>AI Development</h4><p>Building beginner-level AI solutions, including machine learning models and integrations.</p></div>
+      <div class="skill-card reveal"><span class="sic">◈</span><h4>Web Design</h4><p>Crafting modern, user-friendly, and visually appealing interfaces.</p></div>
+    </div>
+
+    <div class="stack-title reveal">— My Skills &amp; Technologies —</div>
+    <div class="stack-grid stagger">
+      <div class="stack-cat reveal">
+        <h5>Programming Languages</h5>
+        <div class="pill-row">
+          <span class="pill">Java (J2EE, JavaFX, AWT)</span><span class="pill">JavaScript</span><span class="pill">Python</span><span class="pill">PHP</span><span class="pill">C#</span><span class="pill">Dart (Flutter)</span><span class="pill">Kotlin</span>
+        </div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Frontend</h5>
+        <div class="pill-row">
+          <span class="pill">React.js</span><span class="pill">Angular</span><span class="pill">Bootstrap 5</span><span class="pill">JavaFX</span><span class="pill">Flutter</span><span class="pill">Android SDK</span>
+        </div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Backend</h5>
+        <div class="pill-row">
+          <span class="pill">Node.js / Express</span><span class="pill">Spring Boot</span><span class="pill">Symfony</span><span class="pill">Laravel</span><span class="pill">NestJS</span><span class="pill">.NET</span><span class="pill">Django</span>
+        </div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Databases</h5>
+        <div class="pill-row">
+          <span class="pill">MySQL</span><span class="pill">PL/SQL</span><span class="pill">SQL Server</span><span class="pill">MongoDB</span><span class="pill">Firebase</span><span class="pill">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Web Services</h5>
+        <div class="pill-row">
+          <span class="pill">REST API</span><span class="pill">SOAP</span><span class="pill">GraphQL</span>
+        </div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Cloud &amp; DevOps</h5>
+        <div class="pill-row">
+          <span class="pill">AWS</span><span class="pill">Docker</span><span class="pill">Jenkins</span><span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">Vagrant</span><span class="pill">SonarQube</span><span class="pill">Nexus</span>
+        </div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Tools</h5>
+        <div class="pill-row"><span class="pill">Git</span><span class="pill">GitHub</span></div>
+      </div>
+      <div class="stack-cat reveal">
+        <h5>Methodologies</h5>
+        <div class="pill-row"><span class="pill">Agile</span><span class="pill">Scrum</span><span class="pill">DevOps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="eyebrow reveal">Featured Projects</div>
+    <div class="proj-head">
+      <h3 class="reveal">A selection of things I've built.</h3>
+      <a href="https://github.com/YOSRcharek" target="_blank" rel="noopener" class="view-all reveal">View GitHub →</a>
+    </div>
+    <div class="proj-grid stagger" id="projGrid">
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><span class="proj-badge">Featured</span><img src="assets/images/projects/projet14.png" alt="BambinoAcademy"></div>
+        <div class="proj-body">
+          <div class="top"><h4>BambinoAcademy</h4><a href="https://bambino-academy.vercel.app/" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>AI-powered e-learning platform for training babysitters &amp; caregivers, with RAG chatbot, proctored exams and Face ID anti-cheating.</p>
+          <div class="tags"><span>Angular</span><span>Node.js</span><span>Flask</span><span>Docker</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/BambinoAcademy" target="_blank" rel="noopener">Code</a>
+            <a href="https://bambino-academy.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+            <a href="https://www.youtube.com/watch?v=7axn8An-yjg" target="_blank" rel="noopener">Demo ▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet13.png" alt="LibroLink"></div>
+        <div class="proj-body">
+          <div class="top"><h4>LibroLink</h4><a href="https://github.com/YOSRcharek/LibroLink" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Collaborative book-sharing platform with personal libraries, wishlists, gamification and secure payments.</p>
+          <div class="tags"><span>Laravel</span><span>PHP</span><span>MySQL</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/LibroLink" target="_blank" rel="noopener">Code</a>
+            <a href="https://www.youtube.com/watch?v=o0ree_XcW24" target="_blank" rel="noopener">Demo ▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet12.png" alt="WasteWise"></div>
+        <div class="proj-body">
+          <div class="top"><h4>WasteWise</h4><a href="https://github.com/YOSRcharek/WasteWise" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Interactive platform for environmental campaigns, with RDF/SPARQL storage and AI-generated queries.</p>
+          <div class="tags"><span>React.js</span><span>Python</span><span>Fuseki</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/WasteWise" target="_blank" rel="noopener">Code</a>
+            <a href="https://www.youtube.com/watch?v=nfhI55oFDhM" target="_blank" rel="noopener">Demo ▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet11.png" alt="HubEducator"></div>
+        <div class="proj-body">
+          <div class="top"><h4>HubEducator</h4><a href="https://github.com/YOSRcharek/HubEducator" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Multimodal educational platform with an AI virtual assistant for text, voice and image interactions.</p>
+          <div class="tags"><span>Django</span><span>Python</span><span>JS</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/HubEducator" target="_blank" rel="noopener">Code</a>
+            <a href="https://www.youtube.com/watch?v=VlS76asl51Y" target="_blank" rel="noopener">Demo ▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet2.png" alt="Smart190"></div>
+        <div class="proj-body">
+          <div class="top"><h4>Smart190</h4><a href="https://github.com/YOSRcharek/Twinners_PI" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Real-time hospital platform with AI urgency prediction and live ambulance routing on interactive maps.</p>
+          <div class="tags"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Flask</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/Twinners_PI" target="_blank" rel="noopener">Code</a>
+            <a href="https://www.youtube.com/watch?v=fvlfpAvHp7k" target="_blank" rel="noopener">Demo ▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet1.png" alt="HomeLengo"></div>
+        <div class="proj-body">
+          <div class="top"><h4>HomeLengo</h4><a href="https://github.com/YOSRcharek/RealEstateAngularSpring" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Real estate management platform with Mapbox visualization and AI-based price prediction for Tunisia.</p>
+          <div class="tags"><span>Angular</span><span>Spring Boot</span><span>MySQL</span><span>Flask</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/RealEstateAngularSpring" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card more-hidden reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet7.png" alt="Resa"></div>
+        <div class="proj-body">
+          <div class="top"><h4>Resa</h4><a href="https://github.com/YOSRcharek/Resa-Booking" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Property reservation platform in Tunisia with role-based access for visitors, clients and owners.</p>
+          <div class="tags"><span>React.js</span><span>Nest.js</span><span>MongoDB</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/Resa-Booking" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card more-hidden reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet5.png" alt="Classy"></div>
+        <div class="proj-body">
+          <div class="top"><h4>Classy</h4><a href="https://github.com/YOSRcharek/Classy" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Web &amp; mobile platform for managing beauty and wellness centers, with online booking and dashboards.</p>
+          <div class="tags"><span>React.js</span><span>Node.js</span><span>MySQL</span><span>Flutter</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/Classy" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card more-hidden reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet8.png" alt="TuniCollab"></div>
+        <div class="proj-body">
+          <div class="top"><h4>TuniCollab</h4><a href="https://github.com/YOSRcharek/TuniCollab" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Collaborative platform for managing associations, events, donations and volunteer registration.</p>
+          <div class="tags"><span>Symfony</span><span>MySQL</span><span>JavaFX</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/TuniCollab" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card more-hidden reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet3.png" alt="TunisiaTouristic"></div>
+        <div class="proj-body">
+          <div class="top"><h4>TunisiaTouristic</h4><a href="https://github.com/YOSRcharek/TunisiaTouristic" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Cross-platform mobile app to help tourists discover Tunisia, with live geolocation and Firestore data.</p>
+          <div class="tags"><span>Flutter</span><span>Firebase</span><span>Google Maps</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/TunisiaTouristic" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card more-hidden reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet10.png" alt="ModemRetourne"></div>
+        <div class="proj-body">
+          <div class="top"><h4>ModemRetourne</h4><a href="https://github.com/YOSRcharek/ModemRetourne" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>Desktop app to manage clients, modems, contracts and subscriptions with role-based authentication.</p>
+          <div class="tags"><span>Java AWT</span><span>MySQL</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/ModemRetourne" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card more-hidden reveal">
+        <div class="proj-thumb"><img src="assets/images/projects/projet4.png" alt="Esprit Testing"></div>
+        <div class="proj-body">
+          <div class="top"><h4>Esprit Testing</h4><a href="https://github.com/YOSRcharek/Katalon-test-" target="_blank" rel="noopener" class="arrow">↗</a></div>
+          <p>QA testing suite covering performance, usability and cross-browser compatibility scenarios.</p>
+          <div class="tags"><span>Katalon</span><span>JMeter</span><span>Puppeteer</span><span>k6</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/YOSRcharek/Katalon-test-" target="_blank" rel="noopener">Code</a>
+            <a href="https://www.youtube.com/watch?v=GBc0DRFTGsk" target="_blank" rel="noopener">Demo ▶</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="show-more-wrap">
+      <button class="show-more-btn" id="projToggleBtn" data-target="projGrid" data-label-more="Voir plus de projets" data-label-less="Voir moins">Voir plus de projets ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="eyebrow reveal">Experience</div>
+    <h3 class="reveal">Where I've worked and grown.</h3>
+    <div class="timeline">
+      <div class="tl-item current reveal">
+        <div class="tl-dot">▣</div>
+        <div class="tl-date">Jan 2026 — Jul 2026</div>
+        <div class="tl-role">
+          <h4>Software Engineering Intern</h4>
+          <div class="co">Bambinosit</div>
+          <p>Developed BambinoAcademy, an AI-powered e-learning platform for training babysitters in Tunisia. Automated learning tracking, proctored exams and Face ID anti-cheating detection. Integrated Stripe and Alfresco ECM, built AI/ML features (RAG chatbot, churn prediction) with Ollama, and designed a Docker-based microservices architecture.</p>
+          <div class="stackline">Angular · Node.js · Python (Flask) · MySQL · Redis · Docker</div>
+          <a class="gh" href="https://github.com/YOSRcharek/BambinoAcademy" target="_blank">GitHub: BambinoAcademy →</a>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">◧</div>
+        <div class="tl-date">Jun 2025 — Aug 2025</div>
+        <div class="tl-role">
+          <h4>Intern — QA Testing</h4>
+          <div class="co">ESPRIT</div>
+          <p>Conducted performance, usability and compatibility tests across browsers and devices. Designed comprehensive test scenarios and matrices, and automated test execution.</p>
+          <div class="stackline">Katalon · JMeter · Puppeteer · k6</div>
+          <a class="gh" href="https://github.com/YOSRcharek/Katalon-test-" target="_blank">GitHub: EspritTest →</a>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">◨</div>
+        <div class="tl-date">Jun 2024 — Jul 2024</div>
+        <div class="tl-role">
+          <h4>Intern — Full-Stack Developer</h4>
+          <div class="co">ONRTECH</div>
+          <p>Developed a property reservation platform for Tunisia with role-based access. Built back-office tools (pricing, promotions, Stripe) and front-office booking features. Deployed on Vercel.</p>
+          <div class="stackline">React.js · Nest.js · MongoDB</div>
+          <a class="gh" href="https://github.com/YOSRcharek/Resa-Booking" target="_blank">GitHub: Resa →</a>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">◧</div>
+        <div class="tl-date">Jan 2023 — Apr 2023</div>
+        <div class="tl-role">
+          <h4>Intern — Final Year Project</h4>
+          <div class="co">Deveoo</div>
+          <p>Built a web platform for beauty &amp; wellness centers: management, online booking with approval workflows, and statistical dashboards for reservations and popularity.</p>
+          <div class="stackline">React.js · Node.js · MySQL · Flutter</div>
+          <a class="gh" href="https://github.com/YOSRcharek/Classy" target="_blank">GitHub: Classy →</a>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">◨</div>
+        <div class="tl-date">Jan 2022 — Feb 2022</div>
+        <div class="tl-role">
+          <h4>Intern</h4>
+          <div class="co">Globalnet</div>
+          <p>Managed clients, modems, contracts and subscriptions with role-based authentication and a technician interface for issue tracking.</p>
+          <div class="stackline">Java AWT · MySQL</div>
+          <a class="gh" href="https://github.com/YOSRcharek/ModemRetourne" target="_blank">GitHub: ModemRetourne →</a>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">○</div>
+        <div class="tl-date">Jul 2021</div>
+        <div class="tl-role">
+          <h4>Intern</h4>
+          <div class="co">Globalnet</div>
+          <p>Built an online parking reservation system with centralized user management and online card/mobile payment.</p>
+          <div class="stackline">HTML · CSS · PHP</div>
+          <a class="gh" href="https://github.com/YOSRcharek/SmartParking" target="_blank">GitHub: SmartParking →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS (ex-testimonials) -->
+<section class="certifications" id="certifications">
+  <div class="wrap">
+    <div class="eyebrow reveal">Certifications</div>
+    <h3 class="reveal">Courses &amp; certificates I've earned.</h3>
+    <div class="cert-grid stagger" id="certGrid">
+
+      <div class="cert-card reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/dataScienceMLCertif.png" data-caption="365 DataScience — The Machine Learning Process A-Z">
+          <img src="assets/images/certs/dataScienceMLCertif.png" alt="365 DataScience certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">365 DataScience <span class="dot"></span><span class="dt">Nov 14, 2025</span></div>
+          <h4>The Machine Learning Process A-Z</h4>
+          <p>Comprehensive course on machine learning covering data preprocessing, modeling, evaluation and deployment.</p>
+          <button class="cert-link" data-full="assets/images/certs/dataScienceMLCertif.png" data-caption="365 DataScience — The Machine Learning Process A-Z">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/HashgraphCertif.png" data-caption="The Hashgraph Association — Hashgraph Developer Course">
+          <img src="assets/images/certs/HashgraphCertif.png" alt="Hashgraph certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">The Hashgraph Association <span class="dot"></span><span class="dt">Nov 05, 2025</span></div>
+          <h4>Hashgraph Developer Course</h4>
+          <p>Practical knowledge of Hedera blockchain, smart contract development and Web3 applications.</p>
+          <button class="cert-link" data-full="assets/images/certs/HashgraphCertif.png" data-caption="The Hashgraph Association — Hashgraph Developer Course">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/awsCertif.png" data-caption="AWS Academy Graduate — Cloud Foundations Training">
+          <img src="assets/images/certs/awsCertif.png" alt="AWS Academy certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">AWS Academy Graduate <span class="dot"></span><span class="dt">Oct 31, 2025</span></div>
+          <h4>Cloud Foundations Training</h4>
+          <p>20 hours of foundational training on AWS Cloud services, cloud computing concepts and best practices.</p>
+          <button class="cert-link" data-full="assets/images/certs/awsCertif.png" data-caption="AWS Academy Graduate — Cloud Foundations Training">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/ApolloCertification.png" data-caption="Apollo — API Orchestration Associate">
+          <img src="assets/images/certs/ApolloCertification.png" alt="Apollo certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">Apollo <span class="dot"></span><span class="dt">Sep 18, 2025</span></div>
+          <h4>API Orchestration — Associate</h4>
+          <p>Building REST connectors within GraphQL schemas, selection mapping transformations and multi-call orchestration.</p>
+          <button class="cert-link" data-full="assets/images/certs/ApolloCertification.png" data-caption="Apollo — API Orchestration Associate">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/KursaCertification.jpg" data-caption="Cursa — Python et Machine Learning">
+          <img src="assets/images/certs/KursaCertification.jpg" alt="Cursa certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">Cursa <span class="dot"></span><span class="dt">Sep 18, 2025</span></div>
+          <h4>Python et Machine Learning</h4>
+          <p>13h02 course on Python programming and fundamental machine learning concepts with Machine Learnia.</p>
+          <button class="cert-link" data-full="assets/images/certs/KursaCertification.jpg" data-caption="Cursa — Python et Machine Learning">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/CERTIFfreecodeCamp.png" data-caption="freeCodeCamp — Responsive Web Design">
+          <img src="assets/images/certs/CERTIFfreecodeCamp.png" alt="freeCodeCamp certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">freeCodeCamp <span class="dot"></span><span class="dt">Sep 13, 2025</span></div>
+          <h4>Responsive Web Design</h4>
+          <p>Certification representing ~300 hours of hands-on practice building accessible, mobile-friendly layouts.</p>
+          <button class="cert-link" data-full="assets/images/certs/CERTIFfreecodeCamp.png" data-caption="freeCodeCamp — Responsive Web Design">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card more-hidden reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/wagonCertification.jpg" data-caption="Le Wagon — Intro to Git & GitHub">
+          <img src="assets/images/certs/wagonCertification.jpg" alt="Le Wagon certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">Le Wagon <span class="dot"></span><span class="dt">Aug 20, 2025</span></div>
+          <h4>Intro to Git &amp; GitHub</h4>
+          <p>Proficiency with Git commands, repository management, branching/merging and collaborative GitHub workflows.</p>
+          <button class="cert-link" data-full="assets/images/certs/wagonCertification.jpg" data-caption="Le Wagon — Intro to Git & GitHub">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card more-hidden reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/ciscoCertif.png" data-caption="Cisco Networking Academy — CCNA: Switching, Routing & Wireless">
+          <img src="assets/images/certs/ciscoCertif.png" alt="Cisco certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">Cisco Networking Academy <span class="dot"></span><span class="dt">Sep 11, 2024</span></div>
+          <h4>CCNA: Switching, Routing &amp; Wireless</h4>
+          <p>Configuring VLANs, inter-VLAN routing, Layer 3 troubleshooting, network redundancy and WLAN management.</p>
+          <button class="cert-link" data-full="assets/images/certs/ciscoCertif.png" data-caption="Cisco Networking Academy — CCNA: Switching, Routing & Wireless">View certificate ↗</button>
+        </div>
+      </div>
+
+      <div class="cert-card more-hidden reveal">
+        <div class="cert-thumb" data-full="assets/images/certs/certifCrocoCoder.jpg" data-caption="CrocoCoder — Web Developer Associate">
+          <img src="assets/images/certs/certifCrocoCoder.jpg" alt="CrocoCoder certificate">
+          <div class="zoom-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Agrandir</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-meta">CrocoCoder <span class="dot"></span><span class="dt">Nov 02, 2022</span></div>
+          <h4>Web Developer — Associate</h4>
+          <p>Building and managing graph-based applications with Apollo, focusing on efficient data querying and schema design.</p>
+          <button class="cert-link" data-full="assets/images/certs/certifCrocoCoder.jpg" data-caption="CrocoCoder — Web Developer Associate">View certificate ↗</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="show-more-wrap">
+      <button class="show-more-btn" id="certToggleBtn" data-target="certGrid" data-label-more="Voir plus de certificats" data-label-less="Voir moins">Voir plus de certificats ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (certificats) -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">✕</button>
+  <img id="lightboxImg" src="" alt="Certificat agrandi">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
-<ol class="timeline-list">
+<!-- CONTACT -->
 
-<!-- WasteWise -->
-<li class="timeline-item">
-  <h4 class="h4 timeline-item-title">WasteWise – Environmental Campaign & Waste Management Platform</h4>
-  <span>Sep 2025 — Nov 2025</span>
-  <p class="timeline-text">
-    Développement d’une plateforme interactive pour la gestion de campagnes écologiques et d’événements citoyens.<br>
-    Technologies : React.js, Python, Fuseki (RDF/SPARQL)<br>
-    <a href="https://github.com/YOSRcharek/WasteWise"  
-       target="_blank" 
-       style="color:#0023bd; font-weight:bold; text-decoration:none;">
-      GitHub: WasteWise
-    </a><br>
-    - Mise en place d’un système CRUD complet avec une interface réactive (React.js)<br>
-    - Back-end structuré en API REST avec Python et stockage RDF via Fuseki (SPARQL)<br>
-    - Intégration d’une IA (OpenRouter) pour générer automatiquement des requêtes SPARQL et analyser les données environnementales
-  </p>
-</li>
-
-
- <!-- LibroLink -->
-<li class="timeline-item">
-  <h4 class="h4 timeline-item-title">LibroLink – BookShare Collaborative Platform</h4>
-  <span>Sep 2025 — Nov 2025</span>
-  <p class="timeline-text">
-    Developed a collaborative platform for book sharing, connecting enthusiasts and managing personal libraries.<br>
-    Technologies: Laravel, PHP, MySQL<br>
-    <a href="https://github.com/YOSRcharek/LibroLink" 
-       target="_blank" 
-       style="color:#0023bd; font-weight:bold; text-decoration:none;">
-      GitHub: BookShare
-    </a><br>
-    - Implemented user roles, personal libraries, and wishlists<br>
-    - Integrated gamification, notifications, and activity tracking<br>
-    - Managed blogs, articles, comments, likes, and subscriptions<br>
-    - Enabled secure online payments for book loans and purchases<br>
-    - Built DevOps pipeline for continuous integration and automated deployment
-  </p>
-</li>
-
-<!-- HubEducator -->
-<li class="timeline-item">
-  <h4 class="h4 timeline-item-title">HubEducator – Multimodal Educational Platform</h4>
-  <span>Feb 2025 — May 2025</span>
-  <p class="timeline-text">
-    Developed a multimodal educational platform with AI-powered virtual assistant for learning and coaching.<br>
-    Technologies: Django, Python, JavaScript, HTML, CSS<br>
-    <a href="https://github.com/YOSRcharek/HubEducator" 
-       target="_blank" 
-       style="color:#0023bd; font-weight:bold; text-decoration:none;">
-      GitHub: HubEducator
-    </a><br>
-    - Implemented role-based user management for students, teachers, coaches, and administrators<br>
-    - Integrated virtual assistant with text, voice, and image interactions<br>
-    - Created course management, auto-generated exercises, and evaluation tracking<br>
-    - Built dashboards for personalized learning progress and teacher monitoring<br>
-    - Managed notifications, content, and platform administration
-  </p>
-</li>
-
-<!-- smart190 -->
-<li class="timeline-item">
-  <h4 class="h4 timeline-item-title">Smart190 – Hospital Management & Real-Time Emergency Platform</h4>
-  <span>Feb 2025 — May 2025</span>
-  <p class="timeline-text">
-    Developed a real-time healthcare platform with role-based dashboards, patient tracking, and ambulance routing.<br>
-    Technologies: React.js, Node.js, MongoDB, Docker, Python, Flask<br>
-    <a href="https://github.com/YOSRcharek/Twinners_PI" 
-       target="_blank" 
-       style="color:#0023bd; font-weight:bold; text-decoration:none;">
-      GitHub: Smart190
-    </a><br>
-    - Integrated AI for urgency prediction and automated triage<br>
-    - Implemented interactive maps for real-time ambulance tracking<br>
-    - Developed smart notifications and hospital coordination system<br>
-    - Built DevOps pipeline for continuous integration and automated deployment<br>
-    - Designed dashboards for doctors, emergency responders, and administrators
-  </p>
-</li>
-
-  <!-- HomeLengo -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">HomeLengo – Real Estate Management & Real-Time Monitoring Platform</h4>
-    <span>Feb 2025 — May 2025</span>
-    <p class="timeline-text">
-      Developed a real-time platform for managing real estate agencies, property listings, and user subscriptions.<br>
-      Technologies: Angular, Spring Boot, MySQL, Python, Flask<br>
-      <a href="https://github.com/YOSRcharek/RealEstateAngularSpring" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: HomeLengo
-      </a><br>
-      - Implemented dashboards to monitor users, subscribers, agencies, and visits<br>
-      - Integrated Mapbox for property locations and real-time visualization<br>
-      - Added AI module with Flask to predict property prices in Tunisia<br>
-      - Built role-based dashboards for admins, owners, and subscribers<br>
-      - Integrated Stripe for subscription payments and transactions<br>
-      - Real-time updates on user activity, agency performance, and property stats
-    </p>
-  </li>
-
-  <!-- CI/CD Automation -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">CI/CD Automation with Jenkins</h4>
-    <span>Feb 2025 — May 2025</span>
-    <p class="timeline-text">
-      Automated application deployment with a CI/CD pipeline.<br>
-      Technologies: Jenkins, Docker, SonarQube, Nexus, Prometheus, Grafana, Mockito, JUnit, Maven<br>
-      <a href="https://github.com/YOSRcharek/DEVOPS" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: DEVOPS
-      </a><br>
-      - Executed Maven builds, unit testing with JUnit & Mockito, and code analysis via SonarQube<br>
-      - Used Docker for containerization, orchestrated with Docker Compose<br>
-      - Deployed images to Docker Hub<br>
-      - Monitored performance with Prometheus and Grafana
-    </p>
-  </li>
-
-  <!-- PetsStore -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">PetsStore – Microservices Platform</h4>
-    <span>Feb 2025 — May 2025</span>
-    <p class="timeline-text">
-      Developed a microservices-based pet store enabling animal orders, payments, and user management.<br>
-      Technologies: Spring Boot, Angular, Eureka, Docker, Docker Compose, MySQL, API Gateway, Keycloak<br>
-      <a href="https://github.com/YOSRcharek/AnimalerieMicroService" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: PetsStore
-      </a><br>
-      - Documented all microservices endpoints with request/response formats<br>
-      - Implemented service discovery with Eureka and API Gateway<br>
-      - Secured services with Keycloak<br>
-      - Deployed and orchestrated with Docker Compose
-    </p>
-  </li>
-
-  <!-- TuniCollab -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">TuniCollab – Collaborative Platform</h4>
-    <span>Feb 2024 — May 2024</span>
-    <p class="timeline-text">
-      Developed a collaborative platform for managing associations, projects, and members.<br>
-      Technologies: Symfony, MySQL, JavaFX, FlutterFlow<br>
-      <a href="https://github.com/YOSRcharek/TuniCollab" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: TuniCollab
-      </a><br>
-      - Implemented project creation, event organization, donation tracking, and volunteer registration<br>
-      - Added email confirmation for secure account activation and notifications
-    </p>
-  </li>
-
-  <!-- Tunisia Touristic -->
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Tunisia Touristic – Tourist Guide (Mobile App)</h4>
-    <span>Feb 2023 — May 2023</span>
-    <p class="timeline-text">
-      Built a cross-platform mobile application to help tourists and locals discover Tunisia’s destinations.<br>
-      Technologies: Flutter, Firebase Firestore, Firebase Authentication, Google Maps API<br>
-      <a href="https://github.com/YOSRcharek/TunisiaTouristic" 
-         target="_blank" 
-         style="color:#0023bd; font-weight:bold; text-decoration:none;">
-        GitHub: TunisiaTouristic
-      </a><br>
-      - Real-time geolocation, interactive maps, and multi-language support<br>
-      - Integrated Firestore for destinations, users, ratings, and favorites<br>
-      - Added push notifications and an admin dashboard<br>
-      - Designed a clean UI/UX optimized for Android and iOS
-    </p>
-  </li>
-
-</ol>
-
-
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-lead">
+          <h3>Let's build something amazing together.</h3>
+          <p>Have a project in mind, an opportunity to discuss, or just want to say hi? I'd love to hear from you.</p>
+        </div>
+        <div class="cinfo">
+          <div><span class="ic">✉</span> yosrcharek@gmail.com</div>
+          <div><span class="ic">☎</span> +216 21 870 951</div>
+          <div><span class="ic">◎</span> Ariana, Tunis, Tunisie</div>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6381.246321303722!2d10.186523!3d36.866507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3456b8aef79f%3A0xb7a04888e566622b!2sAriana%20Centre!5e0!3m2!1sfr!2stn!4v1756923209493!5m2!1sfr!2stn"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <form class="form-panel reveal" id="contactForm" name="contact" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="field"><label>Your Name</label><input type="text" name="fullname" placeholder="John Doe" required></div>
+          <div class="field"><label>Your Email</label><input type="email" name="email" placeholder="john@email.com" required></div>
+        </div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
+        <button type="submit" class="submit-btn" id="submitBtn">Send Message →</button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<section class="skills">
-      <h3 class="h3 skills-title">My Skills & Technologies</h3>
-      <div class="skills-container">
-
-        <!-- Programming Languages -->
-        <div class="skill-category">
-          <h4 class="h4 category-title">Programming Languages</h4>
-          <ul class="skills-list">
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">☕</span><span class="skill-name">Java (J2EE, JavaFX, Java AWT)</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">💻</span><span class="skill-name">JavaScript</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🐍</span><span class="skill-name">Python</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🐘</span><span class="skill-name">PHP</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🎯</span><span class="skill-name">C#</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🦋</span><span class="skill-name">Dart (Flutter)</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🤖</span><span class="skill-name">Kotlin (Android)</span></div></li>
-          </ul>
-        </div>
-
-        <!-- Frontend Frameworks & Technologies -->
-        <div class="skill-category">
-          <h4 class="h4 category-title">Frontend Frameworks & Technologies</h4>
-          <ul class="skills-list">
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">⚛️</span><span class="skill-name">React.js</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🅰️</span><span class="skill-name">Angular</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🎨</span><span class="skill-name">Bootstrap 5</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🖌️</span><span class="skill-name">JavaFX</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🟦</span><span class="skill-name">Flutter</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">📱</span><span class="skill-name">Android SDK</span></div></li>
-          </ul>
-        </div>
-
-        <!-- Backend Frameworks & Technologies -->
-        <div class="skill-category">
-          <h4 class="h4 category-title">Backend Frameworks & Technologies</h4>
-          <ul class="skills-list">
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🟢</span><span class="skill-name">Node.js (Express)</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🚀</span><span class="skill-name">Spring Boot</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🎭</span><span class="skill-name">Symfony</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🦁</span><span class="skill-name">Laravel</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🛠️</span><span class="skill-name">NestJS</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🎯</span><span class="skill-name">.NET</span></div></li>
-            <li class="skills-item"><div class="skill-card"><span class="skill-icon">🐍</span><span class="skill-name">Django</span></div></li>
-
-          </ul>
-        </div>
-   
-
-          
-      </div>
-
-      <!-- Databases -->
-      <div class="skill-category">
-        <h4 class="h4 category-title">Databases</h4>
-        <ul class="skills-list">
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🗃️</span><span class="skill-name">MySQL</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🔢</span><span class="skill-name">PL/SQL</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🖥️</span><span class="skill-name">SQL Server</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🍃</span><span class="skill-name">MongoDB</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🔥</span><span class="skill-name">Firebase</span></div></li>
-         <li class="skills-item"><div class="skill-card"><span class="skill-icon">🐘</span><span class="skill-name">PostgreSQL</span></div></li>
- 
-        </ul>
-      </div>
-
-      <!-- Web Services -->
-      <div class="skill-category">
-        <h4 class="h4 category-title">Web Services</h4>
-        <ul class="skills-list">
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🔗</span><span class="skill-name">API REST</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🧾</span><span class="skill-name">SOAP</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">📊</span><span class="skill-name">GraphQL</span></div></li>
-        </ul>
-      </div>
-
-      <!-- Cloud & DevOps -->
-      <div class="skill-category">
-        <h4 class="h4 category-title">Cloud & DevOps</h4>
-        <ul class="skills-list">
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">☁️</span><span class="skill-name">AWS</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🐳</span><span class="skill-name">Docker</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">⚙️</span><span class="skill-name">Jenkins</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">📊</span><span class="skill-name">Prometheus</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">📈</span><span class="skill-name">Grafana</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🛠️</span><span class="skill-name">Vagrant</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🔍</span><span class="skill-name">SonarQube</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">📦</span><span class="skill-name">Nexus</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">📚</span><span class="skill-name">DockerHub</span></div></li>
-        </ul>
-      </div>
-
-      <!-- Development Tools -->
-      <div class="skill-category">
-        <h4 class="h4 category-title">Development Tools</h4>
-        <ul class="skills-list">
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🔗</span><span class="skill-name">Git</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🐙</span><span class="skill-name">GitHub</span></div></li>
-        </ul>
-      </div>
-
-      <!-- Methodologies -->
-      <div class="skill-category">
-        <h4 class="h4 category-title">Methodologies</h4>
-        <ul class="skills-list">
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">🔄</span><span class="skill-name">Agile</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">📋</span><span class="skill-name">Scrum</span></div></li>
-          <li class="skills-item"><div class="skill-card"><span class="skill-icon">⚙️</span><span class="skill-name">DevOps</span></div></li>
-        </ul>
-      </div>
-
-</section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>  
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-           <li class="filter-item">
-              <button data-filter-btn>Mobile development</button>
-            </li>
-
-           <li class="filter-item">
-              <button data-filter-btn>QA Test</button>
-            </li>
-          <li class="filter-item">
-              <button data-filter-btn>Desktop development</button>
-          </li>
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-             <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box"  data-modal="videoModal" data-video="https://www.youtube.com/embed/o0ree_XcW24">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet13.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">LibroLink</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-             <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box"  data-modal="videoModal" data-video="https://www.youtube.com/embed/nfhI55oFDhM">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet12.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">WasteWise</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-             <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box"  data-modal="videoModal" data-video="https://www.youtube.com/embed/VlS76asl51Y">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet11.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">HubEducator</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModal">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet1.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">HomeLengo</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-
-         <li class="project-item active" data-filter-item data-category="web development">
-          <a href="#">
-            <figure class="project-img">
-              <div class="project-item-icon-box" data-modal="videoModal" data-video="https://www.youtube.com/embed/fvlfpAvHp7k?autoplay=1">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-              <img src="./assets/images/projet2.png" alt="orizon" loading="lazy">
-            </figure>
-            <h3 class="project-title">Smart190</h3>
-            <p class="project-category">Web development</p>
-          </a>
-        </li>
-
-          <li class="project-item active" data-filter-item data-category="QA Test">
-            <a href="#">
-              <figure class="project-img">
-                <div class="project-item-icon-box" data-modal="videoModal" data-video="https://www.youtube.com/embed/GBc0DRFTGsk?autoplay=1">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/projet4.png" alt="orizon" loading="lazy">
-              </figure>
-              <h3 class="project-title">Esprit Testing Website</h3>
-              <p class="project-category">QA Testing</p>
-            </a>
-          </li>
-           <li class="project-item active" data-filter-item data-category="Mobile development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalTn">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet3.png" alt="orizon" loading="lazy">
-                </figure>
-                <h3 class="project-title">TunisiaTouristic</h3>
-                <p class="project-category">Mobile Development</p>
-              </a>
-            </li>
-
-             <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalResa">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet7.png" alt="resa" loading="lazy">
-                </figure>
-                <h3 class="project-title">Resa</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-          <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalTuniCollab">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet8.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">TuniCollab</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-             <li class="project-item active" data-filter-item data-category="Desktop development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalTuniCollabJava">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet9.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">TuniCollab</h3>
-                <p class="project-category">Desktop development</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalClassy">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet5.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">Classy</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-
-           <li class="project-item active" data-filter-item data-category="mobile development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalClassyPhone">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet6.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">Classy</h3>
-                <p class="project-category">Mobile development</p>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="Desktop development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box" data-modal="carouselModalModem">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/projet10.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">ModemRetourne</h3>
-                <p class="project-category">Desktop development</p>
-              </a>
-            </li>
-          </ul>
-           
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CERTIFICATIONS
-      -->
-
-     <article class="Certifications" data-page="certifications">
-
-        <header>
-          <h2 class="h2 article-title">Certifications</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">          
-            
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/dataScienceMLCertif.png" alt="365 DataScience Certificate" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">365 DataScience</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-11-14">Nov 14, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The Machine Learning Process A-Z</h3>
-                  <p class="blog-text">
-                    Completed a comprehensive course on machine learning, covering data preprocessing, modeling, evaluation, and deployment.
-                  </p>
-
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/HashgraphCertif.png" alt="Hashgraph - Associate" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">The Hashgraph Associations </p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Nov 05, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Hashgraph Developer Course</h3>
-    
-                <p class="blog-text">
-                Successfully completed the Hashgraph Developer Course, gaining practical knowledge of Hedera blockchain, smart contract development, and Web3 applications.
-              </p>
-
-
-
-                </div>
-
-              </a>
-            </li>
-             <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/awsCertif.png" alt="aws - Associate" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">The AWS Academy Graduate </p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Oct 31, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Cloud Foundations Training</h3>
-    
-                  <p class="blog-text">
-                     Completed 20 hours of foundational training on AWS Cloud services, cloud computing concepts, and best practices.
-                  </p>
-
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/ApolloCertification.png" alt="Graph Developer - Associate" loading="lazy">
-                </figure>
-
-                 <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">APOLLO</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2025-09-18">Sep 18, 2025</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">API Orchestration — Associate</h3>
-
-            <p class="blog-text">
-              Foundational expertise in
-                <strong>API Orchestration</strong> using Apollo Connectors.  
-                Skills include building REST connectors within GraphQL schemas, applying selection
-                mapping transformations, and orchestrating multiple REST calls for seamless data
-                integration.
-            </p>
-
-
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-left">
+      <span class="logo">YC<span>_</span></span>
+      <span>© 2026 Yosr Charek. All rights reserved.</span>
     </div>
-
-              </a>
-            </li>
-
-           <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/KursaCertification.jpg" alt="Graph Developer - Associate" loading="lazy">
-                </figure>
-
-              <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">CURSA</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2025-09-18">Sep 18, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Python et Machine Learning</h3>
-
-                  <p class="blog-text">
-                    Certification for completing the
-                    <em>Python et Machine Learning avec Machine Learnia</em> course (13&nbsp;h&nbsp;02)
-                    on the Cursa learning platform.  
-                    Confirms practical understanding of Python programming and fundamental machine learning
-                    concepts through structured video lessons.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-                        <a href="#">
-
-                          <figure class="blog-banner-box">
-                            <img src="./assets/images/CERTIFfreecodeCamp.png" alt="Graph Developer - Associate" loading="lazy">
-                          </figure>
-
-                          <div class="blog-content">
-
-                            <div class="blog-meta">
-                              <p class="blog-category">FreeCodeCamp</p>
-
-                              <span class="dot"></span>
-
-                              <time datetime="2022-02-23">Sep 13, 2025</time>
-                            </div>
-
-                            <h3 class="h3 blog-item-title">Responsive Web Design</h3>
-
-                          <p class="blog-text">
-                            Earned the <strong>Responsive Web Design Developer Certification</strong> from
-                            freeCodeCamp.org, representing approximately <strong>300 hours</strong> of
-                            hands-on web development practice.  
-                            Demonstrates the ability to create accessible, mobile-friendly layouts using modern
-                            HTML and CSS techniques.
-                          </p>
-                          </div>
-
-                        </a>
-             </li>
-          <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <!-- Replace src with your Le Wagon certificate image path -->
-              <img src="./assets/images/wagonCertification.jpg"
-                  alt="Yosr Charek — Intro to Git & GitHub"
-                  loading="lazy">
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">LE WAGON</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2025-09-18">Aug 20, 2025</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Intro to Git & GitHub</h3>
-
-             <p class="blog-text">
-              Successfully finished the <strong>Intro to Git & GitHub</strong> course from
-              Le Wagon.  
-              Demonstrates proficiency with Git commands, repository management, branching and
-              merging strategies, and collaborative workflows using GitHub.
-             </p>
-
-
-            </div>
-
-          </a>
-          </li>
-         
-           <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/ciscoCertif.png" alt="Cisco - CCNA: Switching, Routing, and Wireless Essentials" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Cisco Networking Academy</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2024-09-11">Sep 11, 2024</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">CCNA: Switching, Routing, and Wireless Essentials</h3>
-
-                  <p class="blog-text">
-                    Certified in configuring VLANs, inter-VLAN routing, Layer 3 troubleshooting, network redundancy, and WLAN management.
-                  </p>
-
-                </div>
-
-              </a>
-          </li>
-
-             <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/certifCrocoCoder.jpg" alt="SpringBoot & Angular - Associate" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">CrocoCoder</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Nov 02, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Web Developer - Associate</h3>
-    
-                  <p class="blog-text">
-                    Demonstrates proficiency in building and managing graph-based applications using Apollo, focusing on efficient data querying and schema design.
-                  </p>
-
-
-                </div>
-
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-
-      </article>
-<!-- Overlay spécifique pour les certificats -->
-<div id="overlayCertif" class="overlay-certif">
-  <span class="close-certif">&times;</span>
-  <img class="overlay-certif-img" src="" alt="Certificate Fullscreen">
-</div>
-
-     <!--
-        - #CONTACT
-      -->
-
-<article class="contact" data-page="contact">
-
-  <header>
-    <h2 class="h2 article-title">Contact</h2>
-  </header>
-
-  <!-- 🗺️ Google Map centrée sur Ariana Centre -->
-  <section class="mapbox" data-mapbox>
-    <figure>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6381.246321303722!2d10.186523!3d36.866507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3456b8aef79f%3A0xb7a04888e566622b!2sAriana%20Centre!5e0!3m2!1sfr!2stn!4v1756923209493!5m2!1sfr!2stn"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </figure>
-  </section>
-
-  <!-- 📧 Formulaire de contact -->
-  <section class="contact-form">
-    <h3 class="h3 form-title">Contact Form</h3>
-
-    <form action="https://formspree.io/f/mldoodga" method="POST" class="form" data-form>
-
-      <div class="input-wrapper">
-        <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
-        <input type="email" name="email" class="form-input" placeholder="Email address" required>
-      </div>
-
-      <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
-
-      <button class="form-btn" type="submit">
-        <ion-icon name="paper-plane"></ion-icon>
-        <span>Send Message</span>
-      </button>
-    </form>
-  </section>
-
-</article>
-
+    <ul class="foot-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="foot-social">
+      <a href="https://github.com/YOSRcharek" target="_blank" rel="noopener" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg></a>
+      <a href="https://www.linkedin.com/in/yosr-charek-919976242/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5V9h3ZM6.5 7.7A1.7 1.7 0 1 1 8.2 6a1.7 1.7 0 0 1-1.7 1.7ZM19 19h-3v-5c0-1.2 0-2.7-1.6-2.7S12.5 12.6 12.5 14v5h-3V9h2.9v1.3h.1a3.1 3.1 0 0 1 2.8-1.5c3 0 3.7 2 3.7 4.5Z"/></svg></a>
+      <a href="https://www.instagram.com/yosr_charek/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+      <a href="https://www.facebook.com/yosr.bj.7" target="_blank" rel="noopener" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.5H16l.4-3.1h-2.9V8.4c0-.9.3-1.5 1.6-1.5H16.5V4.2C16.2 4.1 15.2 4 14.1 4c-2.3 0-3.9 1.4-3.9 4v2.4H7.8v3.1h2.4V22Z"/></svg></a>
+      <a href="mailto:yosrcharek@gmail.com" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></a>
     </div>
-
-    <!-- Modal Carousel -->
-    <div id="carouselModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="my-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring">
-                <!-- 15 images -->
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="carouselModalResa" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="my-carousel resa-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring">
-                <!-- IMPORTANT ⚡⚡ 12 divs img vides pour que GSAP applique les backgroundImage -->
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="carouselModalTuniCollab" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="my-carousel TuniCollab-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring">
-                <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img">
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    <div id="carouselModalTuniCollabJava" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="my-carousel TuniCollabJava-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring">
-                <!-- IMPORTANT ⚡⚡ 16 divs img vides pour que GSAP applique les backgroundImage -->
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img">
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    <div id="carouselModalClassy" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="my-carousel classy-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring">
-                <!-- IMPORTANT ⚡⚡ 8 divs img vides pour que GSAP applique les backgroundImage -->
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="carouselModalTn" class="modalTn">
-      <div class="modal-contentTn">
-        <span class="close-btnTn">&times;</span>
-        <div class="my-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring-tn">
-                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-                <div class="img-tn"></div><div class="img-tn"></div><div class="img-tn"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="carouselModalClassyPhone" class="modalClassyPhone">
-      <div class="modal-contentClassyPhone">
-        <span class="close-btnClassyPhone">&times;</span>
-        <div class="my-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring-ClassyPhone">
-                <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
-                <div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div><div class="img-ClassyPhone"></div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="carouselModalModem" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="my-carousel modem-carousel">
-          <div class="stage">
-            <div class="container">
-              <div class="ring">
-                <!-- IMPORTANT ⚡⚡ 15 divs img vides pour que GSAP applique les backgroundImage -->
-                <!-- 15 images -->
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-                <div class="img"></div><div class="img"></div><div class="img"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal YouTube -->
-    <div id="videoModal" class="modal2">
-      <div class="modal-content2">
-        <span class="close-btn2">&times;</span>
-        <div class="video-container">
-          <iframe id="youtubeVideo" width="100%" height="100%" 
-            src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-    <div id="imageFullscreenModal" class="image-fullscreen-modal">
-      <span class="close-fullscreen">&times;</span>
-      <img id="fullscreenImage" src="" alt="Image en plein écran">
-    </div>
-
-</main>
+  </div>
+</footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = document.querySelectorAll('[data-nav-link]');
-  const pages = document.querySelectorAll('article[data-page]');
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.style.background = window.scrollY > 30 ? 'rgba(9,9,9,.92)' : 'rgba(9,9,9,.72)';
+});
 
-  if (!navLinks.length || !pages.length) {
-    console.error('Nav links ou pages introuvables : vérifie les attributs data-nav-link / data-page');
-    return;
-  }
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => {
+  const open = navLinks.style.display === 'flex';
+  navLinks.style.display = open ? 'none' : 'flex';
+  navLinks.style.cssText += 'position:absolute;top:76px;left:0;right:0;background:#0a0a0a;flex-direction:column;padding:20px 22px;border-bottom:1px solid #1c1d1d;';
+});
 
-  // fonction pour afficher la page target (ex: 'about', 'resume', ...)
-  const showPage = (target) => {
-    const t = (target || '').trim().toLowerCase();
-    let matched = false;
-
-    pages.forEach(page => {
-      const pageName = (page.dataset.page || '').trim().toLowerCase();
-      const isActive = pageName === t;
-      page.classList.toggle('active', isActive);
-      if (isActive) matched = true;
-    });
-
-    navLinks.forEach(link => {
-      const linkTarget = (link.dataset.navTarget || link.textContent).trim().toLowerCase();
-      link.classList.toggle('active', linkTarget === t);
-    });
-
-    if (!matched) {
-      console.warn('Aucune page correspondante pour :', t);
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-links a');
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+      if (active) active.classList.add('active');
     }
-    window.scrollTo(0, 0);
-  };
-
-  // attacher les handlers
-  navLinks.forEach(link => {
-    link.addEventListener('click', (ev) => {
-      ev.preventDefault();
-      // dataset.navTarget permet d'être explicite (utile si bouton contient <i> ou autres)
-      const target = link.dataset.navTarget || link.textContent;
-      showPage(target);
-    });
   });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => spy.observe(s));
 
-  // optionnel : afficher la page correspondant au bouton actif au chargement
-  const initial = Array.from(navLinks).find(l => l.classList.contains('active'));
-  if (initial) {
-    showPage(initial.dataset.navTarget || initial.textContent);
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ---------- "Voir plus" toggles (projects & certifications) ----------
+function setupShowMore(btn){
+  const grid = document.getElementById(btn.dataset.target);
+  if (!grid) return;
+  const hiddenItems = grid.querySelectorAll('.more-hidden');
+  if (hiddenItems.length === 0){ btn.style.display = 'none'; return; }
+  let expanded = false;
+  btn.addEventListener('click', () => {
+    expanded = !expanded;
+    hiddenItems.forEach(item => {
+      item.classList.toggle('more-hidden', !expanded);
+      if (expanded){ item.classList.add('reveal','in'); }
+    });
+    btn.textContent = expanded
+      ? (btn.dataset.labelLess + ' ↑')
+      : (btn.dataset.labelMore + ' ↓');
+    if (!expanded){
+      grid.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
+  });
+}
+document.querySelectorAll('.show-more-btn').forEach(setupShowMore);
+
+// ---------- Certificate lightbox ----------
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, caption){
+  lightboxImg.src = src;
+  lightboxCaption.textContent = caption || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.cert-thumb, .cert-link').forEach(el => {
+  el.addEventListener('click', () => openLightbox(el.dataset.full, el.dataset.caption));
+});
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+const codeLines = [
+  [['kw','const '],['var','YosrCharek'],['punc',' = {']],
+  [['prop','  role: '],['str',"'IT Engineer',"]],
+  [['prop','  focus: '],['punc','['],['str',"'FullStack'"],['punc',', '],['str',"'DevOps'"],['punc',', '],['str',"'AI'"],['punc',"],"]],
+  [['prop','  code: '],['str',"'Clean',"]],
+  [['prop','  degree: '],['str',"'Computer Engineering',"]],
+  [['prop','  mission: '],['str',"'Build scalable, well-tested'"]],
+  [['str',"    products end to end.',"]],
+  [['prop','  tech: '],['punc','[']],
+  [['str',"    'Java', 'Spring Boot', 'Angular',"]],
+  [['str',"    'React', 'Node.js', 'Docker',"]],
+  [['str',"    'MySQL', 'MongoDB'"]],
+  [['punc','  ]']],
+  [['punc','};']],
+  [['com','// Graduate engineer, ready for full-time roles.']]
+];
+
+const body = document.getElementById('editorBody');
+
+function renderStatic(){
+  body.innerHTML = '';
+  codeLines.forEach((line, i) => {
+    const row = document.createElement('div');
+    const ln = document.createElement('span');
+    ln.className = 'ln';
+    ln.textContent = String(i+1).padStart(2,'0');
+    row.appendChild(ln);
+    line.forEach(([cls, txt]) => {
+      const span = document.createElement('span');
+      span.className = 'tok-' + cls;
+      span.textContent = txt;
+      row.appendChild(span);
+    });
+    body.appendChild(row);
+  });
+}
+
+let typed = false;
+function typeEditor(){
+  if (typed) return;
+  typed = true;
+  body.innerHTML = '';
+  let li = 0;
+  function nextLine(){
+    if (li >= codeLines.length){
+      const cur = document.createElement('span');
+      cur.className = 'type-cursor';
+      body.lastChild.appendChild(cur);
+      return;
+    }
+    const line = codeLines[li];
+    const row = document.createElement('div');
+    const ln = document.createElement('span');
+    ln.className = 'ln';
+    ln.textContent = String(li+1).padStart(2,'0');
+    row.appendChild(ln);
+    body.appendChild(row);
+    let ti = 0;
+    function nextTok(){
+      if (ti >= line.length){ li++; setTimeout(nextLine, 55); return; }
+      const [cls, txt] = line[ti];
+      const span = document.createElement('span');
+      span.className = 'tok-' + cls;
+      row.appendChild(span);
+      let ci = 0;
+      const speed = 8;
+      (function typeChar(){
+        if (ci < txt.length){
+          span.textContent += txt[ci];
+          ci++;
+          setTimeout(typeChar, speed);
+        } else {
+          ti++;
+          nextTok();
+        }
+      })();
+    }
+    nextTok();
   }
+  nextLine();
+}
+
+const editorObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { typeEditor(); editorObs.disconnect(); } });
+}, { threshold: 0.3 });
+editorObs.observe(document.querySelector('.editor'));
+
+renderStatic();
+
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  submitBtn.textContent = 'Sending...';
+  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() })
+    .then((res) => {
+      if (!res.ok) throw new Error('send failed');
+      submitBtn.textContent = 'Message Sent ✓';
+      submitBtn.classList.add('sent');
+      form.reset();
+    })
+    .catch(() => {
+      submitBtn.textContent = 'Error — try again';
+    })
+    .finally(() => {
+      setTimeout(() => {
+        submitBtn.textContent = 'Send Message →';
+        submitBtn.classList.remove('sent');
+      }, 2500);
+    });
 });
 </script>
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js'></script>
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/certif.js"></script>
-<script src="./assets/js/image.js"></script>
-<script src="./assets/js/imageClassyPhone.js"></script>
-<script src="./assets/js/imageTuniCollab.js"></script>
-<script src="./assets/js/imageTuniCollabJava.js"></script>
-<script src="./assets/js/imagesTunisiaTouristic.js"></script>
-<script src="./assets/js/imageResa.js"></script>
-<script src="./assets/js/imageClassy.js"></script>
-<script src="./assets/js/imageModem.js"></script>
-<script src="./assets/js/video.js"></script>
-
-<!-- Ionicons -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
-
 </html>
-
